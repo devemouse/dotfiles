@@ -137,6 +137,8 @@ nmap <silent> <F12> :unmap <F12><CR>:so ~\vimfiles\plugin_on_demand\project.vim<
 " refresh ctags
 map <C-F12> :silent !start ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
+" ponoc lepsze niz esc
+imap jj <Esc>
 
 " other
 nmap <leader>ic :unmap <leader>ic<cr>:so ~\vimfiles\plugin_on_demand\CodeReviewer.vim<CR><leader>ic
@@ -280,7 +282,7 @@ match OverLength /\%101v.\+/
 
 if has("autocmd")
 
-   autocmd! BufWritePost .vimrc source % " automatically interpret vimrs when saving
+   autocmd! BufWritePost .vimrc source % " automatically interpret vimrc when saving
 
    filetype plugin indent on
 
