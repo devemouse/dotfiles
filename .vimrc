@@ -33,6 +33,12 @@ set guifont=Anonymous:h10
 set nocompatible
 behave mswin
 
+"show status line
+set laststatus=2
+
+"and finally I will know which function am I in ;)
+set statusline=%<%f%h%m%r\ /%{&ff}/\ %y%=%b\ 0x%B\ \ %l,%c%V\ %P%=%([%{Tlist_Get_Tagname_By_Line()}]%)
+
 set foldmethod=marker
 let mapleader = ","
 let Tlist_Use_Right_Window = 1
@@ -130,7 +136,7 @@ map <F9> :w<CR>:make debug<CR><CR>:clist<CR>
 nmap <silent> <F10> :call InitSrcExpl()<CR>
 
 " F11
-nmap <silent> <F11> :call InitTagList()<CR>
+nmap <silent> <F11> :TlistToggle<CR>
 map <C-F11> <Esc>:call FullScreenToggle()<CR>
 
 " F12
@@ -398,13 +404,6 @@ fun! InitSrcExpl()
    so ~\vimfiles\plugin_on_demand\srcexpl.vim
    nmap <silent> <F10> :SrcExplToggle<CR>
    SrcExplToggle
-endfunction
-
-fun! InitTagList()
-   unmap <F11>
-   so ~\vimfiles\plugin_on_demand\taglist.vim
-   nmap <silent> <F11> :TlistToggle<CR>
-   TlistToggle
 endfunction
 
 "}}}
