@@ -14,8 +14,8 @@ CompilerSet errorformat=
          \\|\|\ %m,
          \%E%*[\"]%f%*[\"]\\,\ line\ %l:\ fatal\ error\ #%n%.%#,%Z\ \ %p^,%C%m,
          \%E%*[\"]%f%*[\"]\\,\ line\ %l:\ error\ #%n%.%#,%Z\ \ %p^,%C%m,
-         \%W%*[\"]%f%*[\"]\\,\ line\ %l:\ warning\ #%n-D%.%#,%Z\ \ %p^,%C%m
-         "\%I%*[\"]%f%*[\"]\\,\ line\ %l:\ remark\ #%n-D%.%#,%Z\ \ %p^,%C%m
+         \%W%*[\"]%f%*[\"]\\,\ line\ %l:\ warning\ #%n-D%.%#,%Z\ \ %p^,%C%m,
+         \%I%*[\"]%f%*[\"]\\,\ line\ %l:\ remark\ #%n-D%.%#,%Z\ \ %p^,%C%m
    "uncomment this to get compiler remarks
 
    set mef=err.log

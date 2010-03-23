@@ -28,6 +28,7 @@ set grepprg=grep\ -nH\ $*
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
 
+set guifont=Anonymous:h10
 
 set nocompatible
 behave mswin
@@ -41,8 +42,8 @@ let Tlist_Show_One_File = 1
 let Tlist_Use_SingleClick = 1
 let Tlist_WinWidth = 40
 set tabstop=3 shiftwidth=3 expandtab
-"set cursorline
-"set cursorcolumn
+set cursorline
+set cursorcolumn
 set ignorecase
 set smartcase
 set number

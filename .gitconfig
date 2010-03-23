@@ -33,8 +33,12 @@
    br   = "branch"
    di   = "diff --no-ext-diff"
    die  = "diff"
+[web]
+   browser = firefox
 [branch]
    autosetupmerge = true
+[gui]
+   recentrepo = D:/Projekty/DyplomMGR/Book
 [diff]
     external = git_diff_wrapper.sh
    
