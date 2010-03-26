@@ -266,7 +266,7 @@ endfunction
 
 "}}}
 """""""""""""""""""""""""""""""""""""""" WORK OR HOME SETTINGS: """"""""""""""""""""""""""""""""""""""""{{{
-if $USERPROFILE =~ "synowiec"
+if $COMPUTERNAME =~ "R01772"
    "we are at work 
    autocmd BufRead,BufAdd,BufNewFile C:/Projects/AECU/CoreDev/E2061006_02/07_SW/uC_1/* compiler cg7
 
