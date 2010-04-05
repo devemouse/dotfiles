@@ -30,6 +30,8 @@ let g:tex_flavor='latex'
 
 set guifont=Anonymous:h10
 
+set wildmenu "Turn on WiLd menu
+
 set nocompatible
 behave mswin
 
@@ -58,11 +60,19 @@ set spell spelllang=en,pl
 set spellsuggest=best,10
 set backupdir=~\\.backup
 
+set lz              " Don't re-draw while running macros
+
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 set hls
+
+set wildignore=*.bak,*.o,*.e,*~,*.pyc
+" Suffixes that get lower priority when doing tab completion for filenames.
+" These are files we are not likely to want to edit or read.
+set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.class,.pyc
+
 
 set tags+=~\vimfiles\tags\winapi
 
@@ -165,7 +175,8 @@ map <M-K> <C-W>k<C-W>_
 map <M-H> :tabprevious<CR>
 map <M-L> :tabnext<CR>
 
-"duplicate line (like in eclipse)
+"duplicate line (like in eclipse
+")
 map <C-j> yyp
 map <C-k> yyP
 
