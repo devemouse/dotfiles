@@ -39,6 +39,9 @@ set laststatus=2
 "and finally I will know which function am I in ;)
 set statusline=%<%f%h%m%r\ /%{&ff}/\ %y%=%b\ 0x%B\ \ %l,%c%V\ %P%=%([%{Tlist_Get_Tagname_By_Line()}]%)
 
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:?\ ,eol:¬
+
 set foldmethod=marker
 let mapleader = ","
 let Tlist_Use_Right_Window = 1
@@ -58,6 +61,7 @@ set spell spelllang=en,pl
 set spellsuggest=best,10
 set backupdir=~\\.backup
 
+set hid             " Can hide buffers without closing them
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
@@ -73,6 +77,7 @@ if !has("unix")
 endif
  
 set diffexpr=MyDiff()
+
 
 " backspace and cursor keys wrap to previous/next line
 set backspace=indent,eol,start whichwrap+=<,>,[,]
@@ -115,7 +120,8 @@ map <C-F1> :help<CR>
 " F2
 " F3
 " F4
-nmap <F4> :w<CR>:!ruby %<CR>
+"nmap <F4> :w<CR>:!ruby %<CR>
+nmap <F4> :w<CR>:make debug<CR><CR>:clist<CR>
 " F5
 " generate the list of word under cursor
 map <F5> :vimgrep // **/*.c **/*.h<CR>
@@ -130,14 +136,13 @@ map <F7> :cprev<CR>zz:cc<CR>
 map <F8> :cnext<CR>zz:cc<CR>
 
 " F9
-map <F9> :w<CR>:make debug<CR><CR>:clist<CR>
 
 " F10
-nmap <silent> <F10> :call InitSrcExpl()<CR>
+:nnoremap <silent> <F10> :YRShow<CR>
 
 " F11
 nmap <silent> <F11> :TlistToggle<CR>
-map <C-F11> <Esc>:call FullScreenToggle()<CR>
+nmap <silent> <C-F11> :call InitSrcExpl()<CR>
 
 " F12
 nmap <silent> <F12> :unmap <F12><CR>:so ~\vimfiles\plugin_on_demand\project.vim<CR>:nmap <silent> <F12> <Plug>ToggleProject<CR><F12>
@@ -155,6 +160,9 @@ nmap <leader>e :e $MYVIMRC<CR>
 nmap <leader>l :b#<CR>
 
 nmap <leader>o :FuzzyFinderTextMate<CR>
+
+" Shortcut to rapidly toggle `set list`
+nmap <leader>q :set list!<CR>
 
 " remap j and k to scroll by visual lines
 "nnoremap j gj
@@ -284,8 +292,8 @@ endif
 "highlight AlmostOverLength ctermbg=red ctermfg=white guibg=grey30
 "match AlmostOverLength /\%81v.\+%100v/
 
-highlight OverLength ctermbg=red ctermfg=white guibg=grey50
-match OverLength /\%101v.\+/
+"highlight OverLength ctermbg=red ctermfg=white guibg=grey50
+"match OverLength /\%101v.\+/
 
 if has("autocmd")
 
@@ -332,6 +340,9 @@ endif " has("autocmd")
 
 " CALLENDAR OPTIONS
 let g:calendar_monday = 1
+
+" YankRing
+let g:yankring_min_element_length = 2
 
 let g:SrcExpl_isUpdateTags = 0
 "proj flags, imst is default, v will cause using vimgrep instead of grep
@@ -383,20 +394,6 @@ function! MyDiff()
     let cmd = $VIMRUNTIME . '\diff'
   endif
   silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
-endfunction
-
-function! FullScreenToggle()
-   if &guioptions =~ 'm'
-      set guioptions-=m
-   else
-      set guioptions+=m
-   endif
-   if &guioptions =~ 'r'
-      set guioptions-=r
-   else
-      set guioptions+=r
-   endif
-   call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)
 endfunction
 
 fun! InitSrcExpl()   
