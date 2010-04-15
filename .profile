@@ -17,5 +17,8 @@ PS1='\[\033]0;$MSYSTEM:\w\007
 \033[32m\]\u@\h \[\033[33m\w$(__git_ps1)\033[0m\]
 $ '
 
-CG7PATH=/c/Projects/AECU/CoreDev/E2061006_02/07_SW/uC_1
+if [ -e "${HOME}/.bin/.work" ] ; then 
+   echo applyink work settings
+   . ~/.bin/.work
+fi
 
