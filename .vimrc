@@ -131,7 +131,9 @@ map <C-F1> :help<CR>
 " F3
 " F4
 "nmap <F4> :w<CR>:!ruby %<CR>
-nmap <F4> :w<CR>:make debug<CR><CR>:clist<CR>
+nmap <F4> :wa<CR>:make<CR><CR>:clist<CR>
+nmap <C-F4> :wa<CR>:!make qac %<CR>
+nmap <C-S-F4> :wa<CR>:!make standard %<CR>
 " F5
 " generate the list of word under cursor
 map <F5> :vimgrep // **/*.c **/*.h<CR>
@@ -231,10 +233,10 @@ cnoremap <C-Tab> <C-C><C-W>w
 onoremap <C-Tab> <C-C><C-W>w
 
 " CTRL-F4 is Close window
-noremap <C-F4> <C-W>c
-inoremap <C-F4> <C-O><C-W>c
-cnoremap <C-F4> <C-C><C-W>c
-onoremap <C-F4> <C-C><C-W>c
+" noremap <C-F4> <C-W>c
+" inoremap <C-F4> <C-O><C-W>c
+" cnoremap <C-F4> <C-C><C-W>c
+" onoremap <C-F4> <C-C><C-W>c
 
 imap <S-Insert>		<C-V>
 vmap <S-Insert>		<C-V>
@@ -353,7 +355,7 @@ endif " has("autocmd")
 let g:calendar_monday = 1
 
 " YankRing
-let g:yankring_min_element_length = 2
+let g:yankring_min_element_length = 1
 
 let g:SrcExpl_isUpdateTags = 0
 "proj flags, imst is default, v will cause using vimgrep instead of grep
@@ -382,6 +384,11 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
+
+" Remap Y to y$ in Yankring
+function! YRRunAfterMaps()
+   nnoremap Y   :<C-U>YRYankCount 'y$'<CR>
+endfunction
 
 function! MyDiff()
   let opt = '-a --binary '
