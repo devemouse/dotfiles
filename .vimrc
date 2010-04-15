@@ -61,7 +61,7 @@ set number
 set autowrite
 set spell spelllang=en,pl
 set spellsuggest=best,10
-set backupdir=~\\.backup
+set backupdir=~/.backup
 
 set hid             " Can hide buffers without closing them
 set lz              " Don't re-draw while running macros
@@ -78,7 +78,7 @@ set wildignore=*.bak,*.o,*.e,*~,*.pyc
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.class,.pyc
 
 
-set tags+=~\vimfiles\tags\winapi
+set tags+=~/vimfiles/tags/winapi
 
 syntax on
 
@@ -157,7 +157,7 @@ nmap <silent> <F11> :TlistToggle<CR>
 nmap <silent> <C-F11> :call InitSrcExpl()<CR>
 
 " F12
-nmap <silent> <F12> :unmap <F12><CR>:so ~\vimfiles\plugin_on_demand\project.vim<CR>:nmap <silent> <F12> <Plug>ToggleProject<CR><F12>
+nmap <silent> <F12> :unmap <F12><CR>:so ~/vimfiles/plugin_on_demand/project.vim<CR>:nmap <silent> <F12> <Plug>ToggleProject<CR><F12>
 " refresh ctags
 map <C-F12> :silent !start ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
@@ -165,7 +165,7 @@ map <C-F12> :silent !start ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR
 imap jj <Esc>
 
 " other
-nmap <leader>ic :unmap <leader>ic<cr>:so ~\vimfiles\plugin_on_demand\CodeReviewer.vim<CR><leader>ic
+nmap <leader>ic :unmap <leader>ic<cr>:so ~/vimfiles/plugin_on_demand/CodeReviewer.vim<CR><leader>ic
 
 nmap <leader>e :e $MYVIMRC<CR>
 
@@ -416,7 +416,7 @@ endfunction
 
 fun! InitSrcExpl()   
    unmap <F10>
-   so ~\vimfiles\plugin_on_demand\srcexpl.vim
+   so ~/vimfiles/plugin_on_demand/srcexpl.vim
    nmap <silent> <F10> :SrcExplToggle<CR>
    SrcExplToggle
 endfunction
