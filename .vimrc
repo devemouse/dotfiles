@@ -10,7 +10,7 @@
 "source $VIMRUNTIME/mswin.vim
 
 """""""""""""""""""""""""""""""""""""""" SETTINGS: """"""""""""""""""""""""""""""""""""""""{{{
-" and now alt kays are not used for menu entries ;)
+" and now alt keys are not used for menu entries ;)
 set winaltkeys=no
 
 " LATEX SUITE
