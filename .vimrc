@@ -28,7 +28,10 @@ set grepprg=grep\ -nH\ $*
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
 
+if $HOSTTYPE =~ "linux"
 set guifont=Anonymous:h10
+endif
+
 
 set wildmenu "Turn on WiLd menu
 
@@ -440,4 +443,5 @@ endfunction
 "hi User1 term=inverse,bold cterm=inverse,bold ctermfg=red
 
 "}}}
+
 
