@@ -89,7 +89,7 @@ if !has("unix")
   set guioptions-=a
 endif
  
-set diffexpr=MyDiff()
+"set diffexpr=MyDiff()
 
 
 " backspace and cursor keys wrap to previous/next line
