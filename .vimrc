@@ -80,7 +80,7 @@ set wildignore=*.bak,*.o,*.e,*~,*.pyc
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.class,.pyc
 
 
-set tags+=~/vimfiles/tags/winapi
+"set tags+=~/vimfiles/tags/winapi
 
 syntax on
 
@@ -161,7 +161,7 @@ map <C-F11> :silent !start ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --ex
 
 " F12
 nmap <silent> <F12> :unmap <F12><CR>:so ~/vimfiles/plugin_on_demand/project.vim<CR>:nmap <silent> <F12> <Plug>ToggleProject<CR><F12>
-map <C-F12> :silent !start cscope -R -b<CR>:cs add cscope.out<CR>
+map <C-F12> :!cscope -R -b<CR>:cs add ./cscope.out<CR>
 " refresh ctags
 
 " ponoc lepsze niz esc
@@ -174,7 +174,8 @@ nmap <leader>e :e $MYVIMRC<CR>
 
 nmap <leader>l :b#<CR>
 
-nmap <leader>o :FuzzyFinderTextMate<CR>
+"nmap <leader>o :FuzzyFinderTextMate<CR>
+nmap <leader>o :FufFile<CR>
 
 " Shortcut to rapidly toggle `set list`
 nmap <leader>q :set list!<CR>
@@ -356,6 +357,9 @@ endif " has("autocmd")
 
 " CALLENDAR OPTIONS
 let g:calendar_monday = 1
+
+"fuzzy finder
+
 
 " YankRing
 let g:yankring_min_element_length = 1
