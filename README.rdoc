@@ -1,4 +1,6 @@
-== Dariusz Synowiec HOME folder (aka dotfiles)
+= Dariusz Synowiec HOME folder (aka dotfiles)
+
+== Introduction
 
 Those are my most important configuration files from HOME folder. 
 
