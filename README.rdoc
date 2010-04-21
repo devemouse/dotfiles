@@ -14,7 +14,7 @@ Darek
 
 == Environment
 
-I work on Windows and Linux environments. Those settings are shared between
-those systems and work fine.
+I work on Windows, Linux, and Cygwin environments. Those settings are shared
+between those systems so I try to write them to work on all systems.
 
 

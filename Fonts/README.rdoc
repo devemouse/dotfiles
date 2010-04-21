@@ -1,0 +1,3 @@
+== Files
+Annonymnous.ttf - is better looking font I use in Windows. It is terrible in Linux and Cygwin.
+
