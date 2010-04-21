@@ -1,4 +1,6 @@
-Those are my most important configuration files from HOME folder.
+== Dariusz Synowiec HOME folder (aka dotfiles)
+
+Those are my most important configuration files from HOME folder. 
 
 Most important of all is .vimrc and whole vimfiles directory.
 This git repository was create because of vim settings ;)
@@ -9,4 +11,10 @@ Hope you like it
 
 Regards,
 Darek
+
+== Environment
+
+I work on Windows and Linux environments. Those settings are shared between
+those systems and work fine.
+
 
