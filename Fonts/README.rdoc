@@ -1,0 +1,4 @@
+= List of files
+
+* <b>Annonymnous.ttf</b> - is better looking font I use in Windows. It is terrible in Linux and Cygwin.
+

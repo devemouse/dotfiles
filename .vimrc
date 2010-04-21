@@ -13,6 +13,8 @@
 " and now alt keys are not used for menu entries ;)
 set winaltkeys=no
 
+set gcr=n-v-c:block-Cursor/lCursor-blinkwait700-blinkoff200-blinkon175,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor,sm:block-Cursor-blinkwait175-blinkoff100-blinkon125
+
 " LATEX SUITE
 " IMPORTANT: win32 users will need to have 'shellslash' set so that latex
 " can be called correctly.
@@ -81,7 +83,7 @@ set wildignore=*.bak,*.o,*.e,*~,*.pyc
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.class,.pyc
 
 
-set tags+=~/vimfiles/tags/winapi
+"set tags+=~/vimfiles/tags/winapi
 
 syntax on
 
@@ -105,7 +107,7 @@ set scrolloff=3
 
 "syntax highlighting options
 syn sync fromstart
-colorscheme desert
+colorscheme darek
 
 "}}}
 """""""""""""""""""""""""""""""""""""""" MAPPINGS: """"""""""""""""""""""""""""""""""""""""{{{
@@ -153,16 +155,17 @@ map <F8> :cnext<CR>zz:cc<CR>
 " F9
 
 " F10
-:nnoremap <silent> <F10> :YRShow<CR>
+nnoremap <silent> <F10> :YRShow<CR>
+nmap <silent> <C-F10> :call InitSrcExpl()<CR>
 
 " F11
 nmap <silent> <F11> :TlistToggle<CR>
-nmap <silent> <C-F11> :call InitSrcExpl()<CR>
+map <C-F11> :silent !start ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude=.git --exclude=*.s .<CR>
 
 " F12
 nmap <silent> <F12> :unmap <F12><CR>:so ~/vimfiles/plugin_on_demand/project.vim<CR>:nmap <silent> <F12> <Plug>ToggleProject<CR><F12>
+map <C-F12> :!cscope -R -b<CR>:cs add ./cscope.out<CR>
 " refresh ctags
-map <C-F12> :silent !start ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " ponoc lepsze niz esc
 imap jj <Esc>
@@ -174,7 +177,8 @@ nmap <leader>e :e $MYVIMRC<CR>
 
 nmap <leader>l :b#<CR>
 
-nmap <leader>o :FuzzyFinderTextMate<CR>
+"nmap <leader>o :FuzzyFinderTextMate<CR>
+nmap <leader>o :FufFile<CR>
 
 " Shortcut to rapidly toggle `set list`
 nmap <leader>q :set list!<CR>
@@ -356,6 +360,9 @@ endif " has("autocmd")
 
 " CALLENDAR OPTIONS
 let g:calendar_monday = 1
+
+"fuzzy finder
+
 
 " YankRing
 let g:yankring_min_element_length = 1
