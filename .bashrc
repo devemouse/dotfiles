@@ -118,8 +118,8 @@ PS1='\[\033]0;$MSYSTEM:\w\007
 \033[32m\]\u@\h \[\033[33m\w$(__git_ps1)\033[0m\]
 $ '
 
-if [ -e "${HOME}/.bin/.work" ] ; then 
+if [ -e "${HOME}/.bin/.work.bash" ] ; then 
    echo Applying work settings... 
-   . ~/.bin/.work
+   . ~/.bin/.work.bash
 fi
 
