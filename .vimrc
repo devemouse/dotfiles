@@ -177,6 +177,8 @@ nmap <leader>e :e $MYVIMRC<CR>
 
 nmap <leader>l :b#<CR>
 
+nmap <silent> <leader>r :unmap <leader>r<CR>:so ~/vimfiles/plugin_on_demand/project.vim<CR>:nmap <silent> <leader>r <Plug>ToggleProject<CR><F12>
+
 "nmap <leader>o :FuzzyFinderTextMate<CR>
 nmap <leader>o :FufFile<CR>
 
