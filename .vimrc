@@ -173,17 +173,24 @@ imap jj <Esc>
 " other
 nmap <leader>ic :unmap <leader>ic<cr>:so ~/vimfiles/plugin_on_demand/CodeReviewer.vim<CR><leader>ic
 
-nmap <leader>e :e $MYVIMRC<CR>
 
 nmap <leader>l :b#<CR>
 
-nmap <silent> <leader>r :unmap <leader>r<CR>:so ~/vimfiles/plugin_on_demand/project.vim<CR>:nmap <silent> <leader>r <Plug>ToggleProject<CR><F12>
 
 "nmap <leader>o :FuzzyFinderTextMate<CR>
 nmap <leader>o :FufFile<CR>
 
 " Shortcut to rapidly toggle `set list`
 nmap <leader>q :set list!<CR>
+
+" darek mappings:
+nmap <leader>de :e $MYVIMRC<CR>
+nmap <leader>dp :unmap <leader>dp<CR>:so ~/vimfiles/plugin_on_demand/project.vim<CR>:nmap <silent> <leader>dp <Plug>ToggleProject<CR><F12>
+nmap <leader>dl :clist<CR>
+nmap <leader>p :cprev<CR>zz:cc<CR>
+nmap <leader>n :cnext<CR>zz:cc<CR>
+map <leader>dt :silent !start ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude=.git --exclude=*.s .<CR>
+map <leader>ds :!cscope -R -b<CR>:cs add ./cscope.out<CR>
 
 " remap j and k to scroll by visual lines
 "nnoremap j gj
