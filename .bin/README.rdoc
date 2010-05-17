@@ -1,0 +1,4 @@
+= Custom scripts
+
+* <b>afterstart.rb</b> - Creates tasks in windows for starting/stoping some services, copying files etc
+
