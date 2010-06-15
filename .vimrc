@@ -10,6 +10,7 @@
 "source $VIMRUNTIME/mswin.vim
 
 """""""""""""""""""""""""""""""""""""""" SETTINGS: """"""""""""""""""""""""""""""""""""""""{{{
+set encoding=utf8
 " and now alt keys are not used for menu entries ;)
 set winaltkeys=no
 
@@ -164,7 +165,7 @@ map <C-F11> :silent !start ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --ex
 
 " F12
 nmap <silent> <F12> :unmap <F12><CR>:so ~/vimfiles/plugin_on_demand/project.vim<CR>:nmap <silent> <F12> <Plug>ToggleProject<CR><F12>
-map <C-F12> :!cscope -R -b<CR>:cs add ./cscope.out<CR>
+map <C-F12> :silent! cscope kill cscope.out<CR>:!cscope -Rb <CR>:cs add ./cscope.out<CR>
 " refresh ctags
 
 " ponoc lepsze niz esc
@@ -191,6 +192,7 @@ nmap <leader>p :cprev<CR>zz:cc<CR>
 nmap <leader>n :cnext<CR>zz:cc<CR>
 map <leader>dt :silent !start ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude=.git --exclude=*.s .<CR>
 map <leader>ds :!cscope -R -b<CR>:cs add ./cscope.out<CR>
+nmap <leader>dr :call HideCursorLines()<CR>
 
 " remap j and k to scroll by visual lines
 "nnoremap j gj
@@ -305,7 +307,6 @@ endfunction
 """""""""""""""""""""""""""""""""""""""" WORK OR HOME SETTINGS: """"""""""""""""""""""""""""""""""""""""{{{
 if $COMPUTERNAME =~ "R01772"
    "we are at work 
-   autocmd BufRead,BufAdd,BufNewFile C:/Projects/AECU/CoreDev/E2061006_02/07_SW/uC_1/* compiler cg7
 
    au GUIEnter * simalt ~x
 else
@@ -438,6 +439,11 @@ fun! InitSrcExpl()
    so ~/vimfiles/plugin_on_demand/srcexpl.vim
    nmap <silent> <F10> :SrcExplToggle<CR>
    SrcExplToggle
+endfunction
+
+fun! HideCursorLines()
+   set cursorline!
+   set cursorcolumn!
 endfunction
 
 "}}}
