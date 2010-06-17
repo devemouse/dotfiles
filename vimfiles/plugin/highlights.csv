@@ -1,13 +1,13 @@
 hlnum,ctermfg,ctermbg,guifg,guibg
 1,red,,red,
 2,green,,green,
-3,blue,,blue,
-4,black,magenta,black,IndianRed
+3,white,lightblue,white,lightblue
+4,black,magenta,blac,IndianRed
 5,black,green,black,chartreuse
 6,black,cyan,black,DeepSkyBlue
-7,white,DarkRed,white,firebrick
+7,white,DarkRed,white,red
 8,white,DarkGreen,white,DarkGreen
-9,white,DarkBlue,white,DarkSlateBlue
+9,darkblue,yellow,darkblue,yellow
 11,,,black,thistle
 12,,,black,burlywood
 13,,,black,PowderBlue
