@@ -27,7 +27,13 @@ tasks = [
     :command => "C:\\Documents and Settings\\synowiecd\\Application Data\\Dropbox\\bin\\Dropbox.exe", 
     :time => 7*60
   }, 
-
+  
+  { 
+    :name => 'openJazdyAfterDropboxStarts', 
+    :command => "C:\\Darek\\My Dropbox\\Doc\\dojazd\\jazdy.xls", 
+    :time => 5
+  }, 
+  
 ]
 
 pass=EzCrypto::Key.generate

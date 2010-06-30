@@ -23,7 +23,7 @@
 [core]
    ignoreCygwinFSTricks  = true
    autocrlf = true
-   safecrlf = false
+   safecrlf = true
    pager = "less"
 [alias]
    cim  = "commit -m"

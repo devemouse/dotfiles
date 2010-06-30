@@ -51,4 +51,3 @@ CompilerSet errorformat=
    set path+=02_SDE\ComsPCDebug\ComsPCDebug\src,
 
    let g:CodeReviewer_reviewFile="reviews/" . strftime("%Y-%m-%d") . "_review_notes.rev"   " Set review file name
-

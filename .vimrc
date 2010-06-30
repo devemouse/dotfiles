@@ -191,7 +191,7 @@ nmap <leader>dl :clist<CR>
 nmap <leader>p :cprev<CR>zz:cc<CR>
 nmap <leader>n :cnext<CR>zz:cc<CR>
 map <leader>dt :silent !start ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude=.git --exclude=*.s .<CR>
-map <leader>ds :!cscope -R -b<CR>:cs add ./cscope.out<CR>
+map <leader>dc :!cscope -R -b<CR>:cs add ./cscope.out<CR>
 nmap <leader>dr :call HideCursorLines()<CR>
 
 " remap j and k to scroll by visual lines
