@@ -193,6 +193,7 @@ nmap <leader>n :cnext<CR>zz:cc<CR>
 map <leader>dt :silent !start ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude=.git --exclude=*.s .<CR>
 map <leader>dc :!cscope -R -b<CR>:cs add ./cscope.out<CR>
 nmap <leader>dr :call HideCursorLines()<CR>
+vnoremap <M-/> <Esc>/\%V
 
 " remap j and k to scroll by visual lines
 "nnoremap j gj
