@@ -22,8 +22,8 @@
    untracked = cyan
 [core]
    ignoreCygwinFSTricks  = true
-   autocrlf = true
-   safecrlf = true
+   autocrlf = input
+   safecrlf = false
    pager = "less"
 [alias]
    cim  = "commit -m"
