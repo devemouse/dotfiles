@@ -136,8 +136,8 @@ function! s:MatchToggle()
     nunmap <kMinus>
     nunmap <kPlus>
     nunmap <kMultiply>
-    nunmap <Leader>f
-    nunmap <Leader>F
+    "nunmap <Leader>f
+    "nunmap <Leader>F
     nunmap <Leader>n
     nunmap <Leader>N
   else
@@ -151,8 +151,8 @@ function! s:MatchToggle()
     nnoremap <silent> <kMinus> :call <SID>WindowMatches(0)<CR>
     nnoremap <silent> <kPlus> :call <SID>WindowMatches(1)<CR>
     nnoremap <silent> <kMultiply> :call <SID>WindowMatches(2)<CR>
-    nnoremap <silent> <Leader>f :call <SID>Search(0)<CR>
-    nnoremap <silent> <Leader>F :call <SID>Search(1)<CR>
+    "nnoremap <silent> <Leader>f :call <SID>Search(0)<CR>
+    "nnoremap <silent> <Leader>F :call <SID>Search(1)<CR>
     nnoremap <silent> <Leader>n :let @/=<SID>Search(0)<CR>
     nnoremap <silent> <Leader>N :let @/=<SID>Search(1)<CR>
   endif
