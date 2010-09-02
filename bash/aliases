@@ -1,0 +1,45 @@
+# enable color support of ls and also add handy aliases
+
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto -h'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# some more ls aliases
+alias ll='ls -alFh'
+alias la='ls -Ah'
+alias l='ls -CFh'
+# --show-control-chars: help showing Korean or accented characters
+#alias ls='ls -F --color --show-control-chars'
+#alias ll='ls -l'
+	
+
+
+# git
+alias gl='git pull'
+alias gp='git push'
+alias gd='git diff'
+alias gc='git commit'
+alias gcm='git commit -m'
+alias gca='git commit -a'
+alias gcma='git commit -a -m'
+alias ga='git add'
+alias gco='git checkout'
+alias gb='git branch'
+alias gs='git status'
+alias "push"="git push origin $(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')"
+alias "pul"="git pull origin $(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')"
+alias "pull"="pul"
+
+#alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
+
+
+
+# In windows "echo." works as newline.
+alias echo.='echo'

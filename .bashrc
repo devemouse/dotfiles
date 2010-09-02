@@ -65,33 +65,8 @@ xterm*|rxvt*)
     ;;
 esac
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto -h'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-# some more ls aliases
-alias ll='ls -alFh'
-alias la='ls -Ah'
-alias l='ls -CFh'
-
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-# In windows "echo." works as newline.
-alias echo.='echo'
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/bash/aliases ]; then
+	. ~/bash/aliases
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -101,13 +76,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-
-alias "push"="git push origin $(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')"
-alias "pul"="git pull origin $(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')"
-alias "pull"="pul"
-# --show-control-chars: help showing Korean or accented characters
-#alias ls='ls -F --color --show-control-chars'
-#alias ll='ls -l'
 
 if [ "$(__git_ps1)" == "" ] ; then
    echo git ps1 dows not exist
