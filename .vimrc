@@ -84,7 +84,10 @@ set wildignore=*.bak,*.o,*.e,*~,*.pyc
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.class,.pyc
 
 
+set tags+=~/vimfiles/tags/wxWidgets
 "set tags+=~/vimfiles/tags/winapi
+"cscope add ~/vimfiles/tags/wxWidgets.out
+set path+=c:\Darek\app\wxWidgets\include
 
 syntax on
 

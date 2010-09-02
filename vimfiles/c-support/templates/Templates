@@ -4,11 +4,11 @@ $ ========== USER MACROS ======================================
 $ =============================================================
 $
 |AUTHOR|    = Dariusz Synowiec
-|AUTHORREF| = 
-|EMAIL|     = dariusz.synowiec@gmail.com
+|AUTHORREF| = darek129
+|PRIV_EMAIL|     = darek129@gmail.com
 |COMPANY|   = TRW
 |COPYRIGHT| = Copyright (c) |YEAR|, |AUTHOR|
-|STYLE|     = C
+|STYLE|     = CPP
 |PROJECTID| = CORE_GEN_7
 |LOCATION|  = CEC
 $
