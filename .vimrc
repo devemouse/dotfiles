@@ -89,6 +89,8 @@ set tags+=~/vimfiles/tags/wxWidgets
 "cscope add ~/vimfiles/tags/wxWidgets.out
 set path+=c:\Darek\app\wxWidgets\include
 
+"set shell=C:\Darek\app\git\bin\bash.exe shellcmdflag=-c shellxquote=\"
+
 syntax on
 
 if !has("unix")

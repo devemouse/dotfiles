@@ -2,8 +2,15 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+if [ -f ~/bash/aliases ]; then
+	. ~/bash/aliases
+fi
+
 # If not running interactively, don't do anything
-[ -z "$PS1" ] && return
+case "$-" in
+*i*)	;;
+*)	return;;
+esac
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -65,9 +72,6 @@ xterm*|rxvt*)
     ;;
 esac
 
-if [ -f ~/bash/aliases ]; then
-	. ~/bash/aliases
-fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
