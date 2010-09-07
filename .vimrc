@@ -41,6 +41,8 @@ set wildmenu "Turn on WiLd menu
 set nocompatible
 behave mswin
 
+set notitle " disable 'Thanks for flying vim'
+
 "show status line
 set laststatus=2
 
@@ -68,6 +70,8 @@ set autowrite
 set spell spelllang=en,pl
 set spellsuggest=best,10
 set backupdir=~/.backup
+
+set ttyfast " smoother changes, alt:nottyfast
 
 set hid             " Can hide buffers without closing them
 set lz              " Don't re-draw while running macros

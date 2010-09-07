@@ -6,6 +6,19 @@ if [ -f ~/bash/aliases ]; then
 	. ~/bash/aliases
 fi
 
+if [ -f ~/bash/functions ]; then
+	. ~/bash/functions
+fi
+
+# Adding personal bin directory
+if [ -d ${HOME}/.bin ]||[ -h ${HOME}/.bin ]; then
+  # if the ~/.bin dir exists, add it to the path
+  # we're putting it at the begining of the path
+  # because we want the executables in that dir
+  # to take precedence of system executables
+  export PATH=${HOME}/.bin:${PATH}
+fi
+
 # If not running interactively, don't do anything
 case "$-" in
 *i*)	;;
