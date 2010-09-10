@@ -269,19 +269,19 @@ if !exists("g:DoxygenToolkit_briefTag_pre")
   let g:DoxygenToolkit_briefTag_pre = "@brief "
 endif
 if !exists("g:DoxygenToolkit_briefTag_post")
-  let g:DoxygenToolkit_briefTag_post = ""
+  let g:DoxygenToolkit_briefTag_post = " <++>"
 endif
 if !exists("g:DoxygenToolkit_templateParamTag_pre")
   let g:DoxygenToolkit_templateParamTag_pre = "@tparam "
 endif
 if !exists("g:DoxygenToolkit_templateParamTag_post")
-  let g:DoxygenToolkit_templateParamTag_post = ""
+  let g:DoxygenToolkit_templateParamTag_post = " <++>"
 endif
 if !exists("g:DoxygenToolkit_paramTag_pre")
   let g:DoxygenToolkit_paramTag_pre = "@param "
 endif
 if !exists("g:DoxygenToolkit_paramTag_post")
-  let g:DoxygenToolkit_paramTag_post = ""
+  let g:DoxygenToolkit_paramTag_post = " <++>"
 endif
 if !exists("g:DoxygenToolkit_returnTag")
   let g:DoxygenToolkit_returnTag = "@return "
@@ -290,7 +290,7 @@ if !exists("g:DoxygenToolkit_throwTag_pre")
   let g:DoxygenToolkit_throwTag_pre = "@throw " " @exception is also valid
 endif
 if !exists("g:DoxygenToolkit_throwTag_post")
-  let g:DoxygenToolkit_throwTag_post = ""
+  let g:DoxygenToolkit_throwTag_post = " <++>"
 endif
 if !exists("g:DoxygenToolkit_blockHeader")
   let g:DoxygenToolkit_blockHeader = ""
