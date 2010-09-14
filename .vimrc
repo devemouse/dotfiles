@@ -386,8 +386,9 @@ if has("autocmd")
                \   exe "normal! g`\"" |
                \ endif
 
-		
    augroup END
+
+   au BufNewFile,BufRead * call SetLocalOptions(bufname("%"))
 
    set verbosefile=~/vimfiles/startup_log.txt
    augroup StartupLog
@@ -477,6 +478,27 @@ fun! InitSrcExpl()
    nmap <silent> <F10> :SrcExplToggle<CR>
    SrcExplToggle
 endfunction
+
+" Set directory-wise configuration.
+" Search from the directory the file is located upwards to the root for
+" a local configuration file called .lvimrc and sources it.
+"
+" The local configuration file is expected to have commands affecting
+" only the current buffer.
+
+function! SetLocalOptions(fname)
+	let dirname = fnamemodify(a:fname, ":p:h")
+	while "/" != dirname
+		let lvimrc  = dirname . "/.lvimrc"
+		if filereadable(lvimrc)
+			execute "source " . lvimrc
+			break
+		endif
+		let dirname = fnamemodify(dirname, ":p:h:h")
+	endwhile
+endfunction
+
+
 
 fun! HideCursorLines()
    set cursorline!
