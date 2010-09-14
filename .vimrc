@@ -42,7 +42,7 @@ behave mswin
 
 set notitle " disable 'Thanks for flying vim'
 
-map <F2> :call Filetest()<CR>
+map <F3> :call Filetest()<CR>
 
 function! Filetest(...)
    ruby << EOR
@@ -62,6 +62,7 @@ set listchars=tab:>-,trail:.,extends:#,nbsp:.,eol:¬
 set list
 
 set foldmethod=marker
+set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo " which commands trigger auto-unfold
 let mapleader = ","
 let Tlist_Use_Right_Window = 1
 let Tlist_Exit_OnlyWindow = 1
@@ -69,6 +70,21 @@ let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_Show_One_File = 1
 let Tlist_Use_SingleClick = 1
 let Tlist_WinWidth = 40
+" show function/method prototypes in the list
+let Tlist_Display_Prototype=1
+let Tlist_Process_File_Always=1     " process files in the background, even when the TagList window isn't open
+
+" Store the bookmarks file
+let NERDTreeBookmarksFile=expand("$HOME/.vim/NERDTreeBookmarks")
+" Show hidden files, too
+let NERDTreeShowFiles=1
+let NERDTreeShowHidden=1
+
+" Show the bookmarks table on startup
+let NERDTreeShowBookmarks=1
+let NERDTreeChDirMode=2
+
+
 set tabstop=3 shiftwidth=3 expandtab
 set cursorline
 set cursorcolumn
@@ -164,6 +180,8 @@ map <C-F1> :help<CR>
 
 " F1
 " F2
+nmap <F2> :NERDTreeClose<CR>:NERDTreeFind<CR>
+nmap <C-F2> :NERDTreeClose<CR>
 " F3
 " F4
 "nmap <F4> :w<CR>:!ruby %<CR>
@@ -211,7 +229,7 @@ nmap <leader>l :b#<CR>
 "nmap <leader>o :FuzzyFinderTextMate<CR>
 nmap <leader>o :FufFile<CR>
 
-" Shortcut to rapidly toggle `set list`
+" Shortcut to rapidly toggle 'set list'
 nmap <leader>q :set list!<CR>
 
 " darek mappings:
@@ -253,6 +271,12 @@ map # #zz
 
 "speed up commands
 nnoremap ; :
+
+" Swap implementations of ` and ' jump to markers
+" By default, ' jumps to the marked line, ` jumps to the marked line and
+" column, so swap them
+nnoremap ' `
+nnoremap ` '
 
 nnoremap Y y$
 
