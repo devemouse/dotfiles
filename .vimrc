@@ -1,4 +1,4 @@
-"------------------------------------
+"-----------------------------------
 "
 "         AUTOR: Dariusz Synowiec
 "
@@ -35,13 +35,21 @@ if $HOSTTYPE =~ "linux"
 set guifont=Anonymous:h10
 endif
 
-
 set wildmenu "Turn on WiLd menu
 
 set nocompatible
 behave mswin
 
 set notitle " disable 'Thanks for flying vim'
+
+map <F2> :call Filetest()<CR>
+
+function! Filetest(...)
+   ruby << EOR
+   VIM::message(VIM::Buffer.current.name)
+   #VIM::message("Hello world")
+EOR
+endfunction
 
 "show status line
 set laststatus=2
@@ -50,7 +58,8 @@ set laststatus=2
 set statusline=%<%f%h%m%r\ /%{&ff}/\ %y%=%b\ 0x%B\ \ %l,%c%V\ %P%=%([%{Tlist_Get_Tagname_By_Line()}]%)
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:?\ ,eol:¬
+set listchars=tab:>-,trail:.,extends:#,nbsp:.,eol:¬
+set list
 
 set foldmethod=marker
 let mapleader = ","
@@ -69,7 +78,9 @@ set number
 set autowrite
 set spell spelllang=en,pl
 set spellsuggest=best,10
-set backupdir=~/.backup
+
+set nobackup
+set noswapfile
 
 set ttyfast " smoother changes, alt:nottyfast
 
@@ -121,9 +132,11 @@ colorscheme darek
 
 set textwidth=100
 
-set cc=+1  " highlight column after 'textwidth'
-"set cc=+1,+5,+3  " highlight three columns after 'textwidth'
-hi ColorColumn ctermbg=darkgrey guibg=#393939
+if version >=703
+   set cc=+1  " highlight column after 'textwidth'
+   "set cc=+1,+5,+3  " highlight three columns after 'textwidth'
+   hi ColorColumn ctermbg=darkgrey guibg=#393939
+endif
 
 
 
@@ -238,6 +251,9 @@ map [[ [[zz
 map * *zz
 map # #zz
 
+"speed up commands
+nnoremap ; :
+
 nnoremap Y y$
 
 " CTRL-X and SHIFT-Del are Cut
@@ -330,7 +346,10 @@ if $COMPUTERNAME =~ "R01772"
 else
    "we are at home ;)
 
-   au GUIEnter * simalt ~s
+   if has("gui_running") 
+      set lines=45 columns=100 
+   endif 
+   "au GUIEnter * simalt ~s
 endif
 
 
