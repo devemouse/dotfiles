@@ -88,8 +88,9 @@ set statusline=%<%f%h%m%r\ /%{&ff}/\ %y%=%b\ 0x%B\ \ %l,%c%V\ %P%=%([%{GetRAMROM
 
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:>-,trail:.,extends:#,nbsp:.,eol:¬
-set list
+set listchars=tab:>-,trail:·,extends:#,nbsp:.,eol:¬
+set list       
+
 
 set foldmethod=marker
 set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo " which commands trigger auto-unfold
@@ -105,10 +106,9 @@ let Tlist_Display_Prototype=1
 let Tlist_Process_File_Always=1     " process files in the background, even when the TagList window isn't open
 
 " Store the bookmarks file
-let NERDTreeBookmarksFile=expand("$HOME/.vim/NERDTreeBookmarks")
+let NERDTreeBookmarksFile=expand("$HOME/vimfiles/NERDTreeBookmarks")
 " Show hidden files, too
 let NERDTreeShowFiles=1
-let NERDTreeShowHidden=1
 
 " Show the bookmarks table on startup
 let NERDTreeShowBookmarks=1
@@ -210,7 +210,7 @@ map <C-F1> :help<CR>
 
 " F1
 " F2
-nmap <F2> :NERDTreeClose<CR>:NERDTreeFind<CR>
+nmap <F2> :NERDTreeToggle<CR>
 nmap <C-F2> :NERDTreeClose<CR>
 
 " F3
@@ -300,9 +300,6 @@ map ]] ]]zz
 map [[ [[zz
 map * *zz
 map # #zz
-
-"speed up commands
-nnoremap ; :
 
 " Swap implementations of ` and ' jump to markers
 " By default, ' jumps to the marked line, ` jumps to the marked line and
