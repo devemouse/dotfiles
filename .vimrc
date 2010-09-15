@@ -1,4 +1,4 @@
-"------------------------------------
+"-----------------------------------
 "
 "         AUTOR: Dariusz Synowiec
 "
@@ -35,13 +35,21 @@ if $HOSTTYPE =~ "linux"
 set guifont=Anonymous:h10
 endif
 
-
 set wildmenu "Turn on WiLd menu
 
 set nocompatible
 behave mswin
 
 set notitle " disable 'Thanks for flying vim'
+
+map <F3> :call Filetest()<CR>
+
+function! Filetest(...)
+   ruby << EOR
+   VIM::message(VIM::Buffer.current.name)
+   #VIM::message("Hello world")
+EOR
+endfunction
 
 "show status line
 set laststatus=2
@@ -50,9 +58,11 @@ set laststatus=2
 set statusline=%<%f%h%m%r\ /%{&ff}/\ %y%=%b\ 0x%B\ \ %l,%c%V\ %P%=%([%{Tlist_Get_Tagname_By_Line()}]%)
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:?\ ,eol:¬
+set listchars=tab:>-,trail:.,extends:#,nbsp:.,eol:¬
+set list
 
 set foldmethod=marker
+set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo " which commands trigger auto-unfold
 let mapleader = ","
 let Tlist_Use_Right_Window = 1
 let Tlist_Exit_OnlyWindow = 1
@@ -60,6 +70,21 @@ let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_Show_One_File = 1
 let Tlist_Use_SingleClick = 1
 let Tlist_WinWidth = 40
+" show function/method prototypes in the list
+let Tlist_Display_Prototype=1
+let Tlist_Process_File_Always=1     " process files in the background, even when the TagList window isn't open
+
+" Store the bookmarks file
+let NERDTreeBookmarksFile=expand("$HOME/.vim/NERDTreeBookmarks")
+" Show hidden files, too
+let NERDTreeShowFiles=1
+let NERDTreeShowHidden=1
+
+" Show the bookmarks table on startup
+let NERDTreeShowBookmarks=1
+let NERDTreeChDirMode=2
+
+
 set tabstop=3 shiftwidth=3 expandtab
 set cursorline
 set cursorcolumn
@@ -69,7 +94,9 @@ set number
 set autowrite
 set spell spelllang=en,pl
 set spellsuggest=best,10
-set backupdir=~/.backup
+
+set nobackup
+set noswapfile
 
 set ttyfast " smoother changes, alt:nottyfast
 
@@ -121,9 +148,11 @@ colorscheme darek
 
 set textwidth=100
 
-set cc=+1  " highlight column after 'textwidth'
-"set cc=+1,+5,+3  " highlight three columns after 'textwidth'
-hi ColorColumn ctermbg=darkgrey guibg=#393939
+if version >=703
+   set cc=+1  " highlight column after 'textwidth'
+   "set cc=+1,+5,+3  " highlight three columns after 'textwidth'
+   hi ColorColumn ctermbg=darkgrey guibg=#393939
+endif
 
 
 
@@ -151,6 +180,8 @@ map <C-F1> :help<CR>
 
 " F1
 " F2
+nmap <F2> :NERDTreeClose<CR>:NERDTreeFind<CR>
+nmap <C-F2> :NERDTreeClose<CR>
 " F3
 " F4
 "nmap <F4> :w<CR>:!ruby %<CR>
@@ -198,7 +229,7 @@ nmap <leader>l :b#<CR>
 "nmap <leader>o :FuzzyFinderTextMate<CR>
 nmap <leader>o :FufFile<CR>
 
-" Shortcut to rapidly toggle `set list`
+" Shortcut to rapidly toggle 'set list'
 nmap <leader>q :set list!<CR>
 
 " darek mappings:
@@ -237,6 +268,15 @@ map ]] ]]zz
 map [[ [[zz
 map * *zz
 map # #zz
+
+"speed up commands
+nnoremap ; :
+
+" Swap implementations of ` and ' jump to markers
+" By default, ' jumps to the marked line, ` jumps to the marked line and
+" column, so swap them
+nnoremap ' `
+nnoremap ` '
 
 nnoremap Y y$
 
@@ -330,7 +370,10 @@ if $COMPUTERNAME =~ "R01772"
 else
    "we are at home ;)
 
-   au GUIEnter * simalt ~s
+   if has("gui_running") 
+      set lines=45 columns=100 
+   endif 
+   "au GUIEnter * simalt ~s
 endif
 
 
@@ -367,8 +410,9 @@ if has("autocmd")
                \   exe "normal! g`\"" |
                \ endif
 
-		
    augroup END
+
+   au BufNewFile,BufRead * call SetLocalOptions(bufname("%"))
 
    set verbosefile=~/vimfiles/startup_log.txt
    augroup StartupLog
@@ -458,6 +502,27 @@ fun! InitSrcExpl()
    nmap <silent> <F10> :SrcExplToggle<CR>
    SrcExplToggle
 endfunction
+
+" Set directory-wise configuration.
+" Search from the directory the file is located upwards to the root for
+" a local configuration file called .lvimrc and sources it.
+"
+" The local configuration file is expected to have commands affecting
+" only the current buffer.
+
+function! SetLocalOptions(fname)
+	let dirname = fnamemodify(a:fname, ":p:h")
+	while "/" != dirname
+		let lvimrc  = dirname . "/.lvimrc"
+		if filereadable(lvimrc)
+			execute "source " . lvimrc
+			break
+		endif
+		let dirname = fnamemodify(dirname, ":p:h:h")
+	endwhile
+endfunction
+
+
 
 fun! HideCursorLines()
    set cursorline!
