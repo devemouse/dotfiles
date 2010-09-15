@@ -54,8 +54,38 @@ endfunction
 "show status line
 set laststatus=2
 
+function! GetRAMROMusage(...)
+   return ""
+endfunction
+
+function! GetRAMROMusage2(...)
+   "!ruby ramRom.rb -c -f %
+   ruby << EOF
+   #fn = File.basename(file).gsub(Regexp.new(File.extname(file)), "")
+   #regex = fn + "\.o"
+   #path = File.dirname(file).split(File::SEPARATOR)[0]
+
+   #$config[0] = Array.new(1, {:name => fn, :regex => regex, :path => path})
+   #$config = [
+   #[
+   #{:name => "Com"       , :regex => "Com\.o"      , :path => "Com"}, 
+   #],
+   #{ 
+   #"data"    => :ram,
+   #"bss"     => :ram,
+   #"rodata"  => :rom,
+   #"vletext" => :rom,
+   #}
+   #]
+   #VIM::Buffer @buffer = VIM::Buffer.current
+   #cb = VIM::Buffer.current
+   VIM::message(VIM::Buffer.current.name)
+EOF
+endfunction
+
 "and finally I will know which function am I in ;)
-set statusline=%<%f%h%m%r\ /%{&ff}/\ %y%=%b\ 0x%B\ \ %l,%c%V\ %P%=%([%{Tlist_Get_Tagname_By_Line()}]%)
+set statusline=%<%f%h%m%r\ /%{&ff}/\ %y%=%b\ 0x%B\ \ %l,%c%V\ %P%=%([%{GetRAMROMusage()}]%)%([%{Tlist_Get_Tagname_By_Line()}]%)
+
 
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:>-,trail:.,extends:#,nbsp:.,eol:¬
@@ -100,7 +130,7 @@ set noswapfile
 
 set ttyfast " smoother changes, alt:nottyfast
 
-set hid             " Can hide buffers without closing them
+"set hid             " Can hide buffers without closing them
 set lz              " Don't re-draw while running macros
 
 set history=50		" keep 50 lines of command line history
@@ -182,7 +212,9 @@ map <C-F1> :help<CR>
 " F2
 nmap <F2> :NERDTreeClose<CR>:NERDTreeFind<CR>
 nmap <C-F2> :NERDTreeClose<CR>
+
 " F3
+map <S-F3> !ruby ramRom.rb -c -f %<CR>
 " F4
 "nmap <F4> :w<CR>:!ruby %<CR>
 nmap <F4> :wa<CR>:make<CR><CR>:clist<CR>
@@ -343,6 +375,28 @@ inoremap <Space> <Space><C-g>u
 map <silent> <M-o> o<Esc>k
 map <silent> <M-O> O<Esc>j
 
+" map otherwise useless arrow keys to navigate between window splits
+map <up>    :wincmd k<CR>
+map <down>  :wincmd j<CR>
+map <right> :wincmd l<CR>
+map <left>  :wincmd h<CR>
+
+" ctrl modified cursors to operate on tabs
+map <C-up>    :tabedit %<CR>
+map <C-down>  :tabclose<CR>
+map <C-right> :tabnext<CR>
+map <C-left>  :tabprevious<CR>
+
+" alt-right and alt-left to cycle buffers in a split
+map <A-right> :bnext<CR>
+map <A-left>  :bprevious<CR>
+" compensate for terminal
+map <right> :bnext<CR>
+map <left>  :bprevious<CR>
+
+" swap ` (backtick) and ' (single quote)
+nnoremap ' `
+nnoremap ` '
 
 "remove highlighting by pressing esc and when refreshing the screen <C-l>
 nnoremap <esc> :nohlsearch<cr><esc>
