@@ -133,10 +133,10 @@ set ttyfast " smoother changes, alt:nottyfast
 "set hid             " Can hide buffers without closing them
 set lz              " Don't re-draw while running macros
 
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+set history=50    " keep 50 lines of command line history
+set ruler      " show the cursor position all the time
+set showcmd    " display incomplete commands
+set incsearch     " do incremental searching
 set hls
 
 set wildignore=*.bak,*.o,*.e,*~,*.pyc
@@ -318,10 +318,10 @@ vnoremap <C-C> "+y
 vnoremap <C-Insert> "+y
 
 " CTRL-V and SHIFT-Insert are Paste
-map <C-V>		"+gP
-map <S-Insert>		"+gP
-cmap <C-V>		<C-R>+
-cmap <S-Insert>		<C-R>+
+map <C-V>      "+gP
+map <S-Insert>    "+gP
+cmap <C-V>     <C-R>+
+cmap <S-Insert>      <C-R>+
 
 " Pasting blockwise and linewise selections is not possible in Insert and
 " Visual mode without the +virtualedit feature.  They are pasted as if they
@@ -343,16 +343,16 @@ onoremap <C-Tab> <C-C><C-W>w
 " cnoremap <C-F4> <C-C><C-W>c
 " onoremap <C-F4> <C-C><C-W>c
 
-imap <S-Insert>		<C-V>
-vmap <S-Insert>		<C-V>
+imap <S-Insert>      <C-V>
+vmap <S-Insert>      <C-V>
 
 " Use CTRL-Q to do what CTRL-V used to do
-noremap <C-Q>		<C-V>
+noremap <C-Q>     <C-V>
 
 " Use CTRL-S for saving, also in Insert mode
-noremap <C-S>		:update<CR>
-vnoremap <C-S>		<C-C>:update<CR>
-inoremap <C-S>		<C-O>:update<CR>
+noremap <C-S>     :update<CR>
+vnoremap <C-S>    <C-C>:update<CR>
+inoremap <C-S>    <C-O>:update<CR>
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -474,7 +474,7 @@ if has("autocmd")
 
 else
 
-  set autoindent		" always set autoindenting on
+  set autoindent     " always set autoindenting on
 
 endif " has("autocmd")
 
@@ -515,7 +515,7 @@ let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
 " Only define it when not defined already.
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
+        \ | wincmd p | diffthis
 endif
 
 " Remap Y to y$ in Yankring
@@ -562,15 +562,15 @@ endfunction
 " only the current buffer.
 
 function! SetLocalOptions(fname)
-	let dirname = fnamemodify(a:fname, ":p:h")
-	while "/" != dirname
-		let lvimrc  = dirname . "/.lvimrc"
-		if filereadable(lvimrc)
-			execute "source " . lvimrc
-			break
-		endif
-		let dirname = fnamemodify(dirname, ":p:h:h")
-	endwhile
+   let dirname = fnamemodify(a:fname, ":p:h")
+   while "/" != dirname
+      let lvimrc  = dirname . "/.lvimrc"
+      if filereadable(lvimrc)
+         execute "source " . lvimrc
+         break
+      endif
+      let dirname = fnamemodify(dirname, ":p:h:h")
+   endwhile
 endfunction
 
 
