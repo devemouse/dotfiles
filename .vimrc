@@ -466,7 +466,7 @@ if has("autocmd")
 
    augroup END
 
-   au BufNewFile,BufRead * call SetLocalOptions(bufname("%"))
+   "au BufNewFile,BufRead * call SetLocalOptions(bufname("%"))
 
    set verbosefile=~/vimfiles/startup_log.txt
    augroup StartupLog
