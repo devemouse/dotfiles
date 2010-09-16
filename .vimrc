@@ -273,6 +273,7 @@ nmap <leader>n :cnext<CR>zz:cc<CR>
 map <leader>dt :silent !start ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude=.git --exclude=*.s .<CR>
 map <leader>dc :!cscope -R -b<CR>:cs add ./cscope.out<CR>
 nmap <leader>dr :call HideCursorLines()<CR>
+nmap <silent> <leader>gi :call InitGist()<CR>
 vnoremap <M-/> <Esc>/\%V
 
 " remap j and k to scroll by visual lines
@@ -563,11 +564,18 @@ function! MyDiff()
   silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 endfunction
 
-fun! InitSrcExpl()   
+fun! InitSrcExpl()
    unmap <F10>
    so ~/vimfiles/plugin_on_demand/srcexpl.vim
    nmap <silent> <F10> :SrcExplToggle<CR>
    SrcExplToggle
+endfunction
+
+fun! InitGist()
+   let $PATH = "c:\\Darek\\app\\Git\\bin;" . $PATH
+   unmap <leader>gi
+   so ~/vimfiles/plugin_on_demand/gist.vim
+   nmap <silent> <leader>gi :echo "Gist already loaded"<CR>
 endfunction
 
 " Set directory-wise configuration.
