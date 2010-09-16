@@ -103,7 +103,7 @@ let Tlist_Use_SingleClick = 1
 let Tlist_WinWidth = 40
 " show function/method prototypes in the list
 let Tlist_Display_Prototype=1
-let Tlist_Process_File_Always=1     " process files in the background, even when the TagList window isn't open
+"let Tlist_Process_File_Always=1     " process files in the background, even when the TagList window isn't open
 
 " Store the bookmarks file
 let NERDTreeBookmarksFile=expand("$HOME/vimfiles/NERDTreeBookmarks")
@@ -418,6 +418,7 @@ if $COMPUTERNAME =~ "R01772"
    "we are at work 
 
    au GUIEnter * simalt ~x
+   execute "silent! source " . glob("~/.vimrc_work")
 else
    "we are at home ;)
 
@@ -617,23 +618,6 @@ function! s:Hex2dec(line1, line2, arg) range
 endfunction
 
 "}}}
-"""""""""""""""""""""""""""""""""""""""" TRASH: """"""""""""""""""""""""""""""""""""""""{{{
 
-":nmap <F5> :redir! >~/../wiki/TODO.yaml<CR>:g//<CR>:redir END<CR>:new ~/../wiki/TODO.yaml<CR><CR>:q<CR>:!ruby c:\Darek\Config\bath\formatTasks.rb<CR><CR>
-":nmap <F5> :redir! >~/../wiki/TODO.yaml<CR>:g/ PW:\\| W:\\| WP:\\| P:\\| O:/p<CR>:redir END<CR>:new ~/../wiki/TODO.yaml<CR><CR>:q<CR>:!ruby c:\Darek\Config\bath\formatTasks.rb<CR><CR>
-":nmap <F5> :redir! >~/../wiki/TODO.yaml<CR>:g/ PW:\\| W:\\| WP:\\| P:\\| O:/p<CR>:redir END<CR>:!ruby c:\Darek\Config\bath\formatTasks.rb<CR><CR>
-" without numbers
-":nmap <F5> :let @b=&number<CR>:set nonumber<CR>:redir! >~/../wiki/TODO.yaml<CR>:g/ PW:\\| W:\\| WP:\\| P:\\| O:/p<CR>:redir END<CR>:let &number=@b<CR>:!ruby c:\Darek\Config\bath\formatTasks.rb<CR><CR>
-":nmap <F5> :let @b=&number<CR>:set nonumber<CR>:redir!  >~/../wiki/TODO.yaml<CR>:g/ PW:\\| W:\\| WP:\\| P:\\| O:/p<CR>:redir END<CR>:let &number=@b<CR>:silent !ruby c:\Darek\Config\bath\formatTasks.rb<CR><CR>
-
-
-"script that adds do not modify on selected section
-"I/*  DO NOT MODIFY    DO NOT MODIFY     DO NOT MODIFY   j
-"A /*DO NOT MODIFYj
-
-
-"hi User1 term=inverse,bold cterm=inverse,bold ctermfg=red
-
-"}}}
 
 
