@@ -508,6 +508,17 @@ let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
 "au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 "set completeopt=menuone,menu,longest,preview
 
+
+" Gist - github pastbin
+" http://www.vim.org/scripts/script.php?script_id=2423
+" :Gist
+" :Gist -p (private)
+" :Gist XXXX (fetch Gist XXXX and load)
+let g:gist_detect_filetype = 1
+let g:gist_open_browser_after_post = 1
+
+
+
 "}}}
 """""""""""""""""""""""""""""""""""""""" FUNCTIONS: """"""""""""""""""""""""""""""""""""""""{{{
 " Convenient command to see the difference between the current buffer and the
