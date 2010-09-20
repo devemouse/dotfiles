@@ -1,8 +1,7 @@
-
 Best of Vim Tips
 
 David Rayner (zzapper) 15 Years of Vi + 7 years of Vim and still learning
-17May10 : Last Update
+19Sep10 : Last Update
            __BEGIN__
            ------------------------------------------------------------------------------
 Vim Tips   " new items marked *N* , corrected items marked *C*
@@ -79,6 +78,7 @@ Websites   " using rexexp memory in a search
            :%s#<[^>]\+>##g             : delete html tags, leave text (non-greedy)
            :%s#<\_.\{-1,}>##g          : delete html tags possibly multi-line (non-greedy)
            :%s#.*\(\d\+hours\).*#\1#   : Delete all but memorised string (\1) *N*
+           %s#><\([^/]\)#>\r<\1#g      : split jumbled up XML file into one tag per line *N*
            " VIM Power Substitute
            :'a,'bg/fred/s/dick/joe/igc : VERY USEFUL
            " duplicating columns
@@ -105,6 +105,7 @@ Websites   " using rexexp memory in a search
            :%s/a/but/gie|:update|:next : then use @: to repeat
            " ORing
            :%s/goat\|cow/sheep/gc      : ORing (must break pipe)
+           :'a,'bs#\[\|\]##g           : remove [] from lines between markers a and b *N*
            :%s/\v(.*\n){5}/&\r         : insert a blank line every 5 lines *N*
            " Calling a VIM function
            :s/__date__/\=strftime("%c")/ : insert datestring
