@@ -68,9 +68,9 @@ function! GetRAMROMusage2(...)
    #$config[0] = Array.new(1, {:name => fn, :regex => regex, :path => path})
    #$config = [
    #[
-   #{:name => "Com"       , :regex => "Com\.o"      , :path => "Com"}, 
+   #{:name => "Com"       , :regex => "Com\.o"      , :path => "Com"},
    #],
-   #{ 
+   #{
    #"data"    => :ram,
    #"bss"     => :ram,
    #"rodata"  => :rom,
@@ -89,7 +89,7 @@ set statusline=%<%f%h%m%r\ /%{&ff}/\ %y%=%b\ 0x%B\ \ %l,%c%V\ %P%=%([%{GetRAMROM
 
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:>-,trail:·,extends:#,nbsp:.,eol:¬
-set list       
+set list
 
 
 set foldmethod=marker
@@ -130,7 +130,7 @@ set noswapfile
 
 set ttyfast " smoother changes, alt:nottyfast
 
-"set hid             " Can hide buffers without closing them
+set hid             " Can hide buffers without closing them
 set lz              " Don't re-draw while running macros
 
 set history=50    " keep 50 lines of command line history
@@ -157,7 +157,7 @@ syntax on
 if !has("unix")
   set guioptions-=a
 endif
- 
+
 "set diffexpr=MyDiff()
 
 
@@ -313,7 +313,7 @@ nnoremap Y y$
 " CTRL-X and SHIFT-Del are Cut
 vnoremap <C-X> "+x
 vnoremap <S-Del> "+x
- 
+
 " CTRL-C and CTRL-Insert are Copy
 vnoremap <C-C> "+y
 vnoremap <C-Insert> "+y
@@ -361,7 +361,7 @@ map Q gq
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
- 
+
 "to brake the undo chain (allow udoing single lines when entering many in single insert session)
 inoremap <BS> <c-g>u<BS>
 inoremap <CR> <c-g>u<CR>
@@ -420,22 +420,22 @@ iab lllorem Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Etiam lacu
 "}}}
 """""""""""""""""""""""""""""""""""""""" WORK OR HOME SETTINGS: """"""""""""""""""""""""""""""""""""""""{{{
 if $COMPUTERNAME =~ "R01772"
-   "we are at work 
+   "we are at work
 
    au GUIEnter * simalt ~x
    execute "silent! source " . glob("~/.vimrc_work")
 else
    "we are at home ;)
 
-   if has("gui_running") 
-      set lines=45 columns=100 
-   endif 
+   if has("gui_running")
+      set lines=45 columns=100
+   endif
    "au GUIEnter * simalt ~s
 endif
 
 
 "}}}
-"""""""""""""""""""""""""""""""""""""""" AUTO COMMANDS: """"""""""""""""""""""""""""""""""""""""{{{ 
+"""""""""""""""""""""""""""""""""""""""" AUTO COMMANDS: """"""""""""""""""""""""""""""""""""""""{{{
 
 "highlight AlmostOverLength ctermbg=red ctermfg=white guibg=grey30
 "match AlmostOverLength /\%81v.\+%100v/
@@ -522,6 +522,7 @@ let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
 
+let g:snips_author = 'Dariusz Synowiec'
 
 
 "}}}

@@ -4,7 +4,7 @@ snippet main
 	{
 		${1}
 		return 0;
-	}
+	} /* int main(int argc, const char *argv[]) */
 # #include <...>
 snippet inc
 	#include <${1:stdio}.h>${2}
@@ -25,7 +25,7 @@ snippet ifdef
 snippet #if
 	#if ${1:FOO}
 		${2}
-	#endif
+	#endif /* $1 */
 # Header Include-Guard
 # (the randomizer code is taken directly from TextMate; it could probably be
 # cleaner, I don't know how to do it in vim script)
@@ -42,7 +42,11 @@ snippet if
 	if (${1:/* condition */}) 
 	{
 		${2:/* code */}
-	}
+	} /* if ($1) */
+	else 
+	{
+		${1}
+	} /* if ($1) else */
 snippet el
 	else 
 	{
@@ -53,35 +57,35 @@ snippet t
 	${1:/* condition */} ? ${2:a} : ${3:b}
 # Do While Loop
 snippet do
-	do 
+	do /* while ($1); */
 	{
 		${2:/* code */}
 	} 
 	while (${1:/* condition */});
 # While Loop
 snippet wh
-	while (${1:/* condition */}) 
+	while (${1:/* condition */})
 	{
 		${2:/* code */}
-	}
+	} /* while ($1) */
 # For Loop
 snippet for
-	for (${2:i} = 0; $2 < ${1:count}; $2${3:++}) 
+	for (${2:i} = 0; $2 < ${1:count}; $2${3:++})
 	{
 		${4:/* code */}
-	}
+	} /* for ($2 = 0; $2 < $1; $2$3) */
 # Custom For Loop
 snippet forr
-	for (${1:i} = ${2:0}; ${3:$1 < 10}; $1${4:++}) 
+	for (${1:i} = ${2:0}; ${3:$1 < 10}; $1${4:++})
 	{
 		${5:/* code */}
-	}
+	} /* for ($1 = $2; $3; $1$4) */
 # Function
 snippet fun
 	${1:void} ${2:function_name}(${3})
 	{
 		${4:/* code */}
-	}
+	} /* $1 $2($3) */
 # Function Declaration
 snippet fund
 	${1:void} ${2:function_name}(${3});${4}
@@ -118,3 +122,15 @@ snippet .
 	[${1}]${2}
 snippet un
 	unsigned
+# tpedefs
+snippet u8
+	uint8_t ${1};
+snippet u1
+	uint16_t ${1};
+snippet u16
+	uint16_t ${1};
+snippet u3
+	uint32_t ${1};
+snippet u32
+	uint32_t ${1};
+
