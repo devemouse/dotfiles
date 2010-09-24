@@ -274,6 +274,21 @@ map <leader>dt :silent !start ctags -R --c++-kinds=+p --fields=+iaS --extra=+q -
 map <leader>dc :!cscope -R -b<CR>:cs add ./cscope.out<CR>
 nmap <leader>dr :call HideCursorLines()<CR>
 nmap <silent> <leader>gi :call InitGist()<CR>
+
+" Tame the quickfix window (open/close using ,f)
+nmap <silent> <leader>f :QFix<CR>
+
+command! -bang -nargs=? QFix call QFixToggle(<bang>0)
+function! QFixToggle(forced)
+  if exists("g:qfix_win") && a:forced == 0
+    cclose
+    unlet g:qfix_win
+  else
+    copen 10
+    let g:qfix_win = bufnr("$")
+  endif
+endfunction
+
 vnoremap <M-/> <Esc>/\%V
 
 " remap j and k to scroll by visual lines
