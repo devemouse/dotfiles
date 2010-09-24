@@ -10,7 +10,13 @@
 "source $VIMRUNTIME/mswin.vim
 
 """""""""""""""""""""""""""""""""""""""" SETTINGS: """"""""""""""""""""""""""""""""""""""""{{{
-set encoding=utf8
+set nocompatible
+behave mswin
+
+scriptencoding utf-8
+set encoding=utf-8
+
+"set encoding=utf8
 " and now alt keys are not used for menu entries ;)
 set winaltkeys=no
 
@@ -37,8 +43,9 @@ endif
 
 set wildmenu "Turn on WiLd menu
 
-set nocompatible
-behave mswin
+
+
+
 
 set notitle " disable 'Thanks for flying vim'
 
