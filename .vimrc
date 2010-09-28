@@ -283,7 +283,22 @@ nmap <leader>dr :call HideCursorLines()<CR>
 nmap <silent> <leader>gi :call InitGist()<CR>
 
 " Tame the quickfix window (open/close using ,f)
-nmap <silent> <leader>f :QFix<CR>
+nmap <silent> <leader>df :QFix<CR>
+
+""""""""""""""""""""""""""""""""
+"fixers:
+"Fix trailing spaces
+nmap <silent> <leader>fs :%s/\([^\ ]*\) \+$/\1/g<CR>
+
+"Fix Tabs
+nmap <silent> <leader>ft :retab<CR>
+
+"Fix Comments
+nmap <silent> <leader>fc :echo "TODO: Add comments fixer to Vim."<CR>
+
+"Fix Fix (fix all)
+nmap <silent> <leader>ff :retab<CR>:%s/\([^\ ]*\) \+$/\1/g<CR>
+""""""""""""""""""""""""""""""""
 
 command! -bang -nargs=? QFix call QFixToggle(<bang>0)
 function! QFixToggle(forced)
