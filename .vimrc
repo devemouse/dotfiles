@@ -283,7 +283,13 @@ nmap <leader>dr :call HideCursorLines()<CR>
 nmap <silent> <leader>gi :call InitGist()<CR>
 
 " Tame the quickfix window (open/close using ,f)
-nmap <silent> <leader>df :QFix<CR>
+nmap <silent> <leader>dq :QFix<CR>
+
+let g:shell_mappings_enabled = 0
+inoremap <Leader>df <C-o>:Fullscreen<CR>
+nnoremap <Leader>df :Fullscreen<CR>
+inoremap <Leader>op <C-o>:Open<CR>
+nnoremap <Leader>op :Open<CR>
 
 """"""""""""""""""""""""""""""""
 "fixers:

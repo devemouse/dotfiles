@@ -79,6 +79,7 @@
 :FufTag	fuf.txt	/*:FufTag*
 :FufTagWithCursorWord	fuf.txt	/*:FufTagWithCursorWord*
 :FufTaggedFile	fuf.txt	/*:FufTaggedFile*
+:Fullscreen	shell.txt	/*:Fullscreen*
 :MatchDebug	matchit.txt	/*:MatchDebug*
 :NERDTree	NERD_tree.txt	/*:NERDTree*
 :NERDTreeClose	NERD_tree.txt	/*:NERDTreeClose*
@@ -86,6 +87,7 @@
 :NERDTreeFromBookmark	NERD_tree.txt	/*:NERDTreeFromBookmark*
 :NERDTreeMirror	NERD_tree.txt	/*:NERDTreeMirror*
 :NERDTreeToggle	NERD_tree.txt	/*:NERDTreeToggle*
+:Open	shell.txt	/*:Open*
 :TBrowseOutput	tlib.txt	/*:TBrowseOutput*
 :TKeyArg	tlib.txt	/*:TKeyArg*
 :TLet	tlib.txt	/*:TLet*
@@ -2328,6 +2330,8 @@ g:fuf_taggedfile_prompt	fuf.txt	/*g:fuf_taggedfile_prompt*
 g:fuf_taggedfile_switchOrder	fuf.txt	/*g:fuf_taggedfile_switchOrder*
 g:fuf_timeFormat	fuf.txt	/*g:fuf_timeFormat*
 g:fuf_useMigemo	fuf.txt	/*g:fuf_useMigemo*
+g:shell_fullscreen_items	shell.txt	/*g:shell_fullscreen_items*
+g:shell_mappings_enabled	shell.txt	/*g:shell_mappings_enabled*
 g:snippets_dir	snipMate.txt	/*g:snippets_dir*
 g:snips_author	snipMate.txt	/*g:snips_author*
 g:tlib_cache	tlib.txt	/*g:tlib_cache*
@@ -2982,6 +2986,7 @@ review	CodeReviewer.txt	/*review*
 roman	latexhelp.txt	/*roman*
 rqno	latexhelp.txt	/*rqno*
 section-mappings	latex-suite.txt	/*section-mappings*
+shell.txt	shell.txt	/*shell.txt*
 slides-class	latexhelp.txt	/*slides-class*
 smart-backspace	latex-suite.txt	/*smart-backspace*
 smart-keys	latex-suite.txt	/*smart-keys*
@@ -3225,6 +3230,7 @@ vcscommand.txt	vcscommand.txt	/*vcscommand.txt*
 verbatim	latexhelp.txt	/*verbatim*
 verse	latexhelp.txt	/*verse*
 why-IMAP	latex-suite.txt	/*why-IMAP*
+xolox#shell#execute()	shell.txt	/*xolox#shell#execute()*
 yankring	yankring.txt	/*yankring*
 yankring-commands	yankring.txt	/*yankring-commands*
 yankring-configure	yankring.txt	/*yankring-configure*
