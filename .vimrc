@@ -9,12 +9,22 @@
 
 "source $VIMRUNTIME/mswin.vim
 
+
 """""""""""""""""""""""""""""""""""""""" SETTINGS: """"""""""""""""""""""""""""""""""""""""{{{
 set nocompatible
+
+filetype plugin indent on
+
 behave mswin
 
 scriptencoding utf-8
 set encoding=utf-8
+
+set notitle " disable 'Thanks for flying vim'
+
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 
 "set encoding=utf8
 " and now alt keys are not used for menu entries ;)
@@ -42,12 +52,7 @@ set guifont=Anonymous:h10
 endif
 
 set wildmenu "Turn on WiLd menu
-
-
-
-
-
-set notitle " disable 'Thanks for flying vim'
+set wildignore=*.bak,*.o,*.e,*~,*.pyc
 
 map <F3> :call Filetest()<CR>
 
@@ -146,7 +151,6 @@ set showcmd    " display incomplete commands
 set incsearch     " do incremental searching
 set hls
 
-set wildignore=*.bak,*.o,*.e,*~,*.pyc
 " Suffixes that get lower priority when doing tab completion for filenames.
 " These are files we are not likely to want to edit or read.
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.class,.pyc
@@ -188,7 +192,11 @@ set textwidth=100
 if version >=703
    set cc=+1  " highlight column after 'textwidth'
    "set cc=+1,+5,+3  " highlight three columns after 'textwidth'
-   hi ColorColumn ctermbg=darkgrey guibg=#393939
+   hi ColorColumn ctermbg=darkgrey guibg=#393939 
+
+   "undo settings
+   set undodir=~/vimfiles/undofiles
+   set undofile
 endif
 
 
@@ -491,7 +499,6 @@ if has("autocmd")
 
    autocmd! BufWritePost .vimrc source % " automatically interpret vimrc when saving
 
-   filetype plugin indent on
 
    " Put these in an autocmd group, so that we can delete them easily.
    augroup vimrcEx
@@ -568,6 +575,8 @@ let g:gist_open_browser_after_post = 1
 
 let g:snips_author = 'Dariusz Synowiec'
 
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=1
 
 "}}}
 """""""""""""""""""""""""""""""""""""""" FUNCTIONS: """"""""""""""""""""""""""""""""""""""""{{{
