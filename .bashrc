@@ -95,7 +95,7 @@ fi
 
 if [ "$(__git_ps1)" == "" ] ; then
    echo git ps1 dows not exist
-   if [ -e "${HOME}/.bin/.git-completion.bash" ] ; then 
+   if [ -e "${HOME}/.bin/git-completion.bash" ] ; then 
       echo Enabling git completion...
       . ~/.bin/.git-completion.bash
    fi
