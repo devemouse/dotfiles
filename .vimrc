@@ -456,8 +456,9 @@ iab lllorem Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Etiam lacu
 
 "}}}
 """""""""""""""""""""""""""""""""""""""" WORK OR HOME SETTINGS: """"""""""""""""""""""""""""""""""""""""{{{
-if $COMPUTERNAME =~ "R01772"
-   "we are at work
+if $COMPUTERNAME =~ "R"
+   "we are at work 
+
 
    au GUIEnter * simalt ~x
    execute "silent! source " . glob("~/.vimrc_work")

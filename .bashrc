@@ -93,7 +93,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-
 if [ "$(__git_ps1)" == "" ] ; then
    echo git ps1 dows not exist
    if [ -e "${HOME}/.bin/.git-completion.bash" ] ; then 
