@@ -20,7 +20,6 @@ alias l='ls -CFh'
 #alias ll='ls -l'
 	
 
-
 # git
 alias gl='git pull'
 alias gp='git push'
@@ -40,7 +39,19 @@ alias "pull"="pul"
 
 #alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 
-
-
 # In windows "echo." works as newline.
 alias echo.='echo'
+
+
+# form http://github.com/kaichen/dotfiles/blob/macosx//commands_aliases:
+alias f='find . -iname'
+alias q="exit"
+alias :q="exit" # I often use vi like exit by accident, so make it work ;)
+alias G="|grep -n --color=auto"
+
+# Shows most used commands, cool script I got this from: http://lifehacker.com/software/how-to/turbocharge-your-terminal-274317.php
+alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"
+
+
+
+
