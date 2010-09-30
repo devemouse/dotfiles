@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 #Script Fixes common mistakes like common typos, comments and so on
 
 puts "FIXXER SCRIPT ;)"
