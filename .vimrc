@@ -96,7 +96,7 @@ EOF
 endfunction
 
 "and finally I will know which function am I in ;)
-set statusline=%<%f%h%m%r\ /%{&ff}/\ %y%=%b\ 0x%B\ \ %l,%c%V\ %P%=%([%{GetRAMROMusage()}]%)%([%{Tlist_Get_Tagname_By_Line()}]%)
+set statusline=%<%f%h%m%r\ /%{&ff}/\ %y%=%b\ 0x%B\ \ %l,%c%V\ %P\ %{fugitive#statusline()}\ %=%([%{GetRAMROMusage()}]%)%([%{Tlist_Get_Tagname_By_Line()}]%)
 
 
 " Use the same symbols as TextMate for tabstops and EOLs
@@ -473,7 +473,6 @@ iab lllorem Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Etiam lacu
 if $COMPUTERNAME =~ "R"
    "we are at work 
 
-
    au GUIEnter * simalt ~x
    execute "silent! source " . glob("~/.vimrc_work")
 else
@@ -626,7 +625,6 @@ fun! InitSrcExpl()
 endfunction
 
 fun! InitGist()
-   let $PATH = "c:\\Darek\\app\\Git\\bin;" . $PATH
    unmap <leader>gi
    so ~/vimfiles/plugin_on_demand/gist.vim
    nmap <silent> <leader>gi :echo "Gist already loaded"<CR>
