@@ -282,13 +282,15 @@ nmap <leader>q :set list!<CR>
 " darek mappings:
 nmap <leader>de :e $MYVIMRC<CR>
 nmap <leader>dp :unmap <leader>dp<CR>:so ~/vimfiles/plugin_on_demand/project.vim<CR>:nmap <silent> <leader>dp <Plug>ToggleProject<CR><F12>
-nmap <leader>dl :clist<CR>
+nmap <leader>dcl :clist<CR>
 nmap <leader>p :cprev<CR>zz:cc<CR>
 nmap <leader>n :cnext<CR>zz:cc<CR>
 map <leader>dt :silent !start ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude=.git --exclude=*.s .<CR>
 map <leader>dc :!cscope -R -b<CR>:cs add ./cscope.out<CR>
 nmap <leader>dr :call HideCursorLines()<CR>
 nmap <silent> <leader>gi :call InitGist()<CR>
+
+nmap <leader>dl :set list!<CR>
 
 " Tame the quickfix window (open/close using ,f)
 nmap <silent> <leader>dq :QFix<CR>
@@ -298,6 +300,9 @@ inoremap <Leader>df <C-o>:Fullscreen<CR>
 nnoremap <Leader>df :Fullscreen<CR>
 inoremap <Leader>op <C-o>:Open<CR>
 nnoremap <Leader>op :Open<CR>
+
+" Rainbows!
+nmap <leader>dR :RainbowParenthesesToggle<CR>
 
 """"""""""""""""""""""""""""""""
 "fixers:
