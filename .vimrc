@@ -232,7 +232,7 @@ nmap <C-F2> :NERDTreeClose<CR>
 map <S-F3> !ruby ramRom.rb -c -f %<CR>
 " F4
 "nmap <F4> :w<CR>:!ruby %<CR>
-nmap <F4> :wa<CR>:make<CR><CR>:clist<CR>
+nmap <F4> :bufdo update<CR>:make<CR><CR>
 nmap <C-F4> :wa<CR>:!make qac %<CR>
 nmap <C-S-F4> :wa<CR>:!make standard %<CR>
 " F5
