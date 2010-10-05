@@ -33,13 +33,15 @@ let s:ContextLines = 0
 " Set the following to 1 if you want the original buffer to automatically
 " follow your selection in the filter window. This setting can be toggled by
 " pressing 'a' (default) in a filter window.
-let s:AutoFollow = 0
+let s:AutoFollow = 1
 
 " Key mappings. Some implementation default is showing here. Just pass a
 " string to search for as the first argument and 0 as the second.
-nmap ,F :call Gather(input("Filter on term: "), 0)<CR>
-nmap ,f :call Gather(@/, 0)<CR>:echo<CR>
-nmap ,g :call GotoOpenSearchBuffer()<CR>
+nmap ,/ :call Gather(input("f/"), 0)<CR>
+nmap ,* :call Gather(expand('<cword>'), 0)<CR>
+nmap ,g* :call Gather(expand('<cWORD>'), 0)<CR>
+nmap ,fi :call Gather(@/, 0)<CR>:echo<CR>
+nmap ,fg :call GotoOpenSearchBuffer()<CR>
 
 " This is the highlighting group used for the filter context lines. I picked a
 " value that works good with my current color scheme.
@@ -49,6 +51,9 @@ hi FilterContext guifg=grey60
 " in the filter window. For regular search, the global option wrapscan is
 " applied (setlocal is not available). 0 = 'nowrapscan', 1 = 'wrapscan'.
 let s:filterWindowWrapScan = 0
+
+let s:filterWindowWindowSize = 10
+
 
 " This function is called when a new search buffer is created. You can change
 " the default key mappings and add more.
@@ -314,6 +319,8 @@ function! Gather(line_pattern, search_buffer)
     endfor
     normal! ddgg
     setlocal nomodifiable
+
+    execute ":resize " . s:filterWindowWindowSize
 
     unlet s:Gather
 endfunction
