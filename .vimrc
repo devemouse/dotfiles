@@ -341,14 +341,32 @@ map <M-K> <C-W>k<C-W>_
 map <M-H> :tabprevious<CR>
 map <M-L> :tabnext<CR>
 
-"duplicate line (like in eclipse
-")
-map <C-j> yyp
-map <C-k> yyP
+" Line operations (from http://github.com/tpope/vim-unimpaired/blob/master/plugin/unimpaired.vim) {{{1
+" I have this plugin in my repo but for performance reasons I did not include whole plugin in my
+" config.
 
-"move line
-map <C-J> ddp
-map <C-K> ddkP
+nnoremap <silent> <Plug>unimpairedBlankUp   :<C-U>put!=repeat(nr2char(10),v:count)<Bar>']+1<CR>
+nnoremap <silent> <Plug>unimpairedBlankDown :<C-U>put =repeat(nr2char(10),v:count)<Bar>'[-1<CR>
+
+nmap [<Space> <Plug>unimpairedBlankUp
+nmap ]<Space> <Plug>unimpairedBlankDown
+
+nnoremap <silent> <Plug>unimpairedMoveUp   :<C-U>exe 'norm m`'<Bar>exe 'move--'.v:count1<CR>``
+nnoremap <silent> <Plug>unimpairedMoveDown :<C-U>exe 'norm m`'<Bar>exe 'move+'.v:count1<CR>``
+xnoremap <silent> <Plug>unimpairedMoveUp   :<C-U>exe 'norm m`'<Bar>exe '''<,''>move--'.v:count1<CR>gv
+xnoremap <silent> <Plug>unimpairedMoveDown :<C-U>exe 'norm m`'<Bar>exe '''<,''>move''>+'.v:count1<CR>gv
+
+nmap [e <Plug>unimpairedMoveUp
+nmap ]e <Plug>unimpairedMoveDown
+xmap [e <Plug>unimpairedMoveUp
+xmap ]e <Plug>unimpairedMoveDown
+
+" }}}1
+
+
+" Visually select the text that was last edited/pasted
+nmap gV `[v`]
+
 
 "center view after search next/prevoius
 map n nzz
