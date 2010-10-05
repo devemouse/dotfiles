@@ -526,13 +526,6 @@ if has("autocmd")
 
    "au BufNewFile,BufRead * call SetLocalOptions(bufname("%"))
 
-   set verbosefile=~/vimfiles/startup_log.txt
-   augroup StartupLog
-      autocmd!
-      autocmd SourcePre * silent echom expand('<afile>')
-      autocmd VimEnter * set verbosefile& | autocmd! StartupLog
-   augroup END
-
 else
 
   set autoindent     " always set autoindenting on
@@ -547,6 +540,10 @@ let g:calendar_monday = 1
 
 "fuzzy finder
 
+let g:fuf_coveragefile_globPatterns = ['**/*.c', '**/*.h, **/makefile, **/*.txt, **/*.vim']
+let g:fuf_autoPreview = 1
+let g:fuf_previewHeight = 30
+let g:fuf_modesDisable = []
 
 " YankRing
 let g:yankring_min_element_length = 1
