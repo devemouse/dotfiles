@@ -566,6 +566,10 @@ let g:fuf_modesDisable = []
 " YankRing
 let g:yankring_min_element_length = 1
 
+"QuickFilter
+let g:filteringDefaultContextLines = 0
+let g:filteringDefaultAutoFollow = 1
+
 let g:SrcExpl_isUpdateTags = 0
 "proj flags, imst is default, v will cause using vimgrep instead of grep
 let g:proj_flags="imstv"
