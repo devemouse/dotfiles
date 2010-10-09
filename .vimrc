@@ -25,6 +25,8 @@ set notitle " disable 'Thanks for flying vim'
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+"shortens messages to avoid 'press a key' prompt
+set shortmess=atI
 
 "set encoding=utf8
 " and now alt keys are not used for menu entries ;)
