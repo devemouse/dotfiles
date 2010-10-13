@@ -71,7 +71,7 @@ setlocal commentstring=#\ %s
 
 if !exists("s:rubypath")
   if has("ruby") && has("win32")
-    ruby VIM::command( 'let s:rubypath = "%s"' % ($: + begin; require %q{rubygems}; Gem.all_load_paths.sort.uniq; rescue LoadError; []; end).join(%q{,}) )
+    ruby VIM::command( 'let s:rubypath = "%s"' % (Gem.all_load_paths.sort.uniq).join(',') )
     let s:rubypath = '.,' . substitute(s:rubypath, '\%(^\|,\)\.\%(,\|$\)', ',,', '')
   elseif executable("ruby")
     let s:code = "print ($: + begin; require %q{rubygems}; Gem.all_load_paths.sort.uniq; rescue LoadError; []; end).join(%q{,})"
