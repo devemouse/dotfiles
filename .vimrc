@@ -262,8 +262,17 @@ map <C-F11> :silent !start ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --ex
 
 " F12
 nmap <silent> <F12> :unmap <F12><CR>:so ~/vimfiles/plugin_on_demand/project.vim<CR>:nmap <silent> <F12> <Plug>ToggleProject<CR><F12>
-map <C-F12> :silent! cscope kill cscope.out<CR>:!cscope -Rb <CR>:cs add ./cscope.out<CR>
+map <C-F12> :silent! cscope kill cscope.out<CR>:!cscope -Rbc <CR>:cs add ./cscope.out<CR>
 " refresh ctags
+
+"nmap <C-1> :1tabn<CR>
+"nmap <C-2> :2tabn<CR>
+"nmap <C-3> :3tabn<CR>
+"nmap <C-4> :4tabn<CR>
+"nmap <C-5> :5tabn<CR>
+"nmap <C-6> :6tabn<CR>
+"nmap <C-7> :7tabn<CR>
+"nmap <C-8> :8tabn<CR>
 
 " ponoc lepsze niz esc
 imap jj <Esc>
