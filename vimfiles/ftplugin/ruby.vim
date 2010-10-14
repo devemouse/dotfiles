@@ -71,6 +71,7 @@ setlocal commentstring=#\ %s
 
 if !exists("s:rubypath")
   if has("ruby") && has("win32")
+    silent! ruby require 'rubygems'
     ruby VIM::command( 'let s:rubypath = "%s"' % (Gem.all_load_paths.sort.uniq).join(',') )
     let s:rubypath = '.,' . substitute(s:rubypath, '\%(^\|,\)\.\%(,\|$\)', ',,', '')
   elseif executable("ruby")
