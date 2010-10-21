@@ -130,8 +130,8 @@ let NERDTreeChDirMode=2
 
 
 set tabstop=3 shiftwidth=3 expandtab
-set cursorline
-set cursorcolumn
+"set cursorline
+"set cursorcolumn
 set ignorecase
 set smartcase
 set number
@@ -240,6 +240,7 @@ nmap <C-S-F4> :wa<CR>:!make standard %<CR>
 " F5
 " generate the list of word under cursor
 map <F5> :vimgrep // **/*.c **/*.h<CR>
+map <S-F5> :vimgrep // **/*.c **/*.h
 
 " F6
 map <F6> :clist<CR>
