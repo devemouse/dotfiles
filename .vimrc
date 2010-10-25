@@ -300,6 +300,8 @@ nmap <leader>n :cnext<CR>zz:cc<CR>
 map <leader>dt :silent !start ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude=.git --exclude=*.s .<CR>
 map <leader>dc :!cscope -R -b<CR>:cs add ./cscope.out<CR>
 nmap <leader>dr :call HideCursorLines()<CR>
+nmap <leader>di :!echo echo string(input("IN: "))<CR>
+
 nmap <silent> <leader>gi :call InitGist()<CR>
 
 nmap <leader>dl :set list!<CR>
@@ -353,7 +355,7 @@ map <M-K> <C-W>k<C-W>_
 map <M-H> :tabprevious<CR>
 map <M-L> :tabnext<CR>
 
-" Line operations (from http://github.com/tpope/vim-unimpaired/blob/master/plugin/unimpaired.vim) {{{1
+" Line operations (from http://github.com/tpope/vim-unimpaired/blob/master/plugin/unimpaired.vim) {{{
 " I have this plugin in my repo but for performance reasons I did not include whole plugin in my
 " config.
 
@@ -373,7 +375,7 @@ nmap ]e <Plug>unimpairedMoveDown
 xmap [e <Plug>unimpairedMoveUp
 xmap ]e <Plug>unimpairedMoveDown
 
-" }}}1
+" }}}
 
 
 " Visually select the text that was last edited/pasted
