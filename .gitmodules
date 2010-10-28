@@ -6,7 +6,7 @@
 	url = http://github.com/scrooloose/nerdtree.git
 [submodule "vimfiles/bundle/snipmate"]
 	path = vimfiles/bundle/snipmate
-	url = git@github.com:darek129/snipmate.vim.git
+	url = http://github.com/darek129/snipmate.vim.git
 [submodule "vimfiles/bundle/bisect"]
 	path = vimfiles/bundle/bisect
 	url = http://github.com/mikezackles/Bisect.git
