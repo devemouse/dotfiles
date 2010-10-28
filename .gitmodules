@@ -7,3 +7,6 @@
 [submodule "vimfiles/bundle/snipmate"]
 	path = vimfiles/bundle/snipmate
 	url = git@github.com:darek129/snipmate.vim.git
+[submodule "vimfiles/bundle/bisect"]
+	path = vimfiles/bundle/bisect
+	url = http://github.com/mikezackles/Bisect.git
