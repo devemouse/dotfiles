@@ -10,3 +10,6 @@
 [submodule "vimfiles/bundle/bisect"]
 	path = vimfiles/bundle/bisect
 	url = http://github.com/mikezackles/Bisect.git
+[submodule "vimfiles/bundle/tabular"]
+	path = vimfiles/bundle/tabular
+	url = http://github.com/godlygeek/tabular.git
