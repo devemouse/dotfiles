@@ -12,3 +12,8 @@
 *.swp
 *.*~
 
+# tags databases #
+##################
+cscope.out
+tags
+
