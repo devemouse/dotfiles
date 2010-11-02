@@ -26,6 +26,7 @@
    safecrlf = false
    pager = "less"
    editor = vim
+   excludesfile = ~/.gitignore_global
 [alias]
    cim  = "commit -m"
    cima = "commit -a -m"
