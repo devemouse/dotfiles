@@ -15,4 +15,4 @@
 	url = http://github.com/godlygeek/tabular.git
 [submodule "vimfiles/bundle/vim-ruby"]
 	path = vimfiles/bundle/vim-ruby
-	url = http://github.com/vim-ruby/vim-ruby.git
+	url = http://github.com/darek129/vim-ruby.git
