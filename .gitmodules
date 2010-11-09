@@ -16,3 +16,6 @@
 [submodule "vimfiles/bundle/vim-ruby"]
 	path = vimfiles/bundle/vim-ruby
 	url = http://github.com/darek129/vim-ruby.git
+[submodule "vimfiles/bundle/bufexplorer"]
+	path = vimfiles/bundle/bufexplorer
+	url = git://github.com/vim-scripts/bufexplorer.zip.git
