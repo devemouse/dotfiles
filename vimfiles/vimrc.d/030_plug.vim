@@ -1,9 +1,11 @@
 
 """""""""""""""""""""""""""""""""""""""" PLUGIN SETTINGS: """"""""""""""""""""""""""""""""""""""""{{{
 
-"silent! ruby require 'rubygems'
-"ruby VIM::command( 'let g:ruby_path = "%s"' % (Gem.all_load_paths.sort.uniq).join(',') )
-"let g:ruby_path = '.,' . substitute(g:ruby_path, '\%(^\|,\)\.\%(,\|$\)', ',,', '')
+if has('win16') || has('win32') || has('win64')
+   silent! ruby require 'rubygems'
+   ruby VIM::command( 'let g:ruby_path = "%s"' % (Gem.all_load_paths.sort.uniq).join(',') )
+   let g:ruby_path = '.,' . substitute(g:ruby_path, '\%(^\|,\)\.\%(,\|$\)', ',,', '')
+endif
 
 
 " CALLENDAR OPTIONS
