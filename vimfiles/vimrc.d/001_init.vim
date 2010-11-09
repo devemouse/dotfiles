@@ -71,6 +71,12 @@ function! GetRAMROMusage(...)
    return ""
 endfunction
 
+" When you do a "cw" command to replace a word, or "C" to replace the remainder of a line, vi will
+" normally immediately blank out what you are changing. With this setting, the original word or line
+" you are replacing is still visible as you type over it. This is purely a visual change, and does
+" not change the actions of "change" in any way. Helps you keep context on what you are replacing.
+set cpoptions=$
+
 "function! GetRAMROMusage2(...)
    "!ruby ramRom.rb -c -f %
    "ruby << EOF
