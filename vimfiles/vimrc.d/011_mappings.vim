@@ -70,8 +70,9 @@ map <C-F12> :silent! cscope kill cscope.out<CR>:!cscope -Rbc <CR>:cs add ./cscop
 "nmap <C-7> :7tabn<CR>
 "nmap <C-8> :8tabn<CR>
 
-" ponoc lepsze niz esc
-imap jj <Esc>
+" could be better than esc
+imap ,, <Esc>
+imap ;; <Esc>
 
 " other
 nmap <leader>ic :unmap <leader>ic<cr>:so ~/vimfiles/plugin_on_demand/CodeReviewer.vim<CR><leader>ic
