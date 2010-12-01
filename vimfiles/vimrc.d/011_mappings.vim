@@ -175,7 +175,7 @@ xmap ]e <Plug>unimpairedMoveDown
 
 
 " Visually select the text that was last edited/pasted
-nmap gV `[v`]
+nnoremap <expr> gV '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 
 "center view after search next/prevoius
