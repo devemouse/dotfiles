@@ -111,6 +111,9 @@ nnoremap <Leader>df :Fullscreen<CR>
 inoremap <Leader>op <C-o>:Open<CR>
 nnoremap <Leader>op :Open<CR>
 
+nnoremap <Leader>sc :SCCompile<CR>
+nnoremap <Leader>scr :SCCompileRun<CR>
+
 " Rainbows!
 nmap <leader>dR :RainbowParenthesesToggle<CR>
 
