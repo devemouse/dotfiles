@@ -6,7 +6,7 @@
 	url = http://github.com/scrooloose/nerdtree.git
 [submodule "vimfiles/bundle/snipmate"]
 	path = vimfiles/bundle/snipmate
-	url = http://github.com/darek129/snipmate.vim.git
+	url = http://github.com/devemouse/snipmate.vim.git
 [submodule "vimfiles/bundle/bisect"]
 	path = vimfiles/bundle/bisect
 	url = http://github.com/mikezackles/Bisect.git
@@ -15,10 +15,10 @@
 	url = http://github.com/godlygeek/tabular.git
 [submodule "vimfiles/bundle/vim-ruby"]
 	path = vimfiles/bundle/vim-ruby
-	url = http://github.com/darek129/vim-ruby.git
+	url = http://github.com/devemouse/vim-ruby.git
 [submodule "vimfiles/bundle/bufexplorer"]
 	path = vimfiles/bundle/bufexplorer
 	url = git://github.com/vim-scripts/bufexplorer.zip.git
 [submodule "vimfiles/bundle/SingleCompile"]
 	path = vimfiles/bundle/SingleCompile
-	url = git://github.com/darek129/SingleCompile.git
+	url = git://github.com/devemouse/SingleCompile.git
