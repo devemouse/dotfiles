@@ -19,6 +19,3 @@
 [submodule "vimfiles/bundle/bufexplorer"]
 	path = vimfiles/bundle/bufexplorer
 	url = git://github.com/vim-scripts/bufexplorer.zip.git
-[submodule "vimfiles/bundle/SingleCompile"]
-	path = vimfiles/bundle/SingleCompile
-	url = git://github.com/darek129/SingleCompile.git
