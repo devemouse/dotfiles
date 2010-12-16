@@ -22,3 +22,6 @@
 [submodule "vimfiles/bundle/SingleCompile"]
 	path = vimfiles/bundle/SingleCompile
 	url = git://github.com/devemouse/SingleCompile.git
+[submodule "vimfiles/bundle/vim-surround"]
+	path = vimfiles/bundle/vim-surround
+	url = git://github.com/tpope/vim-surround.git
