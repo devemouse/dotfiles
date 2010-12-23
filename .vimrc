@@ -7,10 +7,10 @@
 "
 "------------------------------------
 
-"source $VIMRUNTIME/mswin.vim
-source $HOME/vimfiles/vimrc.d/001_init.vim
-source $HOME/vimfiles/vimrc.d/010_local.vim
-source $HOME/vimfiles/vimrc.d/011_mappings.vim
+for f in split(glob('~/vimfiles/vimrc.d/*.vim'), '\n')
+    exe 'source' f
+endfor
+
 """""""""""""""""""""""""""""""""""""""" WORK OR HOME SETTINGS: """"""""""""""""""""""""""""""""""""""""{{{
 if $COMPUTERNAME =~ "R"
    "we are at work 
@@ -28,9 +28,5 @@ endif
 
 
 "}}}
-source $HOME/vimfiles/vimrc.d/020_autocmd.vim
-source $HOME/vimfiles/vimrc.d/030_plug.vim
-source $HOME/vimfiles/vimrc.d/900_functions.vim
-
 
 
