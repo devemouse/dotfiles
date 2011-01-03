@@ -1,7 +1,8 @@
+
 Best of Vim Tips
 
 David Rayner (zzapper) 15 Years of Vi + 7 years of Vim and still learning
-19Sep10 : Last Update
+12Oct10 : Last Update
            __BEGIN__
            ------------------------------------------------------------------------------
 Vim Tips   " new items marked *N* , corrected items marked *C*
