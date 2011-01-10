@@ -30,3 +30,7 @@ endif
 "}}}
 
 
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=grey25   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=grey15 ctermbg=4
+
