@@ -21,7 +21,7 @@
 	url = git://github.com/vim-scripts/bufexplorer.zip.git
 [submodule "vimfiles/bundle/SingleCompile"]
 	path = vimfiles/bundle/SingleCompile
-	url = git://github.com/devemouse/SingleCompile.git
+	url = git://github.com/vim-scripts/SingleCompile.git
 [submodule "vimfiles/bundle/vim-surround"]
 	path = vimfiles/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
