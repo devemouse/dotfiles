@@ -45,3 +45,5 @@
 [diff]
     external = git_diff_wrapper.sh
    
+[github]
+	user = devemouse

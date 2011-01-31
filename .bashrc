@@ -109,4 +109,3 @@ if [ -e "${HOME}/.bin/.work.bash" ] ; then
    echo Applying work settings... 
    . ~/.bin/.work.bash
 fi
-

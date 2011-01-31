@@ -34,3 +34,15 @@ let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=grey25   ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=grey15 ctermbg=4
 
+set relativenumber
+nnoremap / /\v
+vnoremap / /\v
+set gdefault
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+au FocusLost * :bufdo update
+
+let g:ackprg="perl c:/Darek/bin/ack -H --nocolor --nogroup --column"
+
