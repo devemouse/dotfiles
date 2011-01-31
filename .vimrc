@@ -42,7 +42,6 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
-au FocusLost * :bufdo update
 
 let g:ackprg="perl c:/Darek/bin/ack -H --nocolor --nogroup --column"
 

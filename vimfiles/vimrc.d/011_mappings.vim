@@ -34,8 +34,8 @@ nmap <C-F4> :wa<CR>:!make qac %<CR>
 nmap <C-S-F4> :wa<CR>:!make standard %<CR>
 " F5
 " generate the list of word under cursor
-map <F5> :vimgrep // **/*.c **/*.h<CR>
-map <S-F5> :vimgrep // **/*.c **/*.h
+map <F5> :Ack --cc 
+map <S-F5> :Ack --cc <CR>
 
 " F6
 map <F6> :clist<CR>
@@ -77,12 +77,7 @@ imap ;; <Esc>
 " other
 nmap <leader>ic :unmap <leader>ic<cr>:so ~/vimfiles/plugin_on_demand/CodeReviewer.vim<CR><leader>ic
 
-
 nmap <leader>l :b#<CR>
-
-
-"nmap <leader>o :FuzzyFinderTextMate<CR>
-nmap <leader>o :FufFile<CR>
 
 " Shortcut to rapidly toggle 'set list'
 nmap <leader>q :set list!<CR>
@@ -97,8 +92,6 @@ map <leader>dt :silent !start ctags -R --c++-kinds=+p --fields=+iaS --extra=+q -
 map <leader>dc :!cscope -R -b<CR>:cs add ./cscope.out<CR>
 nmap <leader>dr :call HideCursorLines()<CR>
 nmap <leader>di :!echo echo string(input("IN: "))<CR>
-
-nmap <silent> <leader>gi :call InitGist()<CR>
 
 nmap <leader>dl :set list!<CR>
 
