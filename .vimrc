@@ -31,7 +31,7 @@ endif
 
 
 let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=grey25   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=grey25 ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=grey15 ctermbg=4
 
 set relativenumber
@@ -44,4 +44,13 @@ vnoremap <F1> <ESC>
 
 
 let g:ackprg="perl c:/Darek/bin/ack -H --nocolor --nogroup --column"
+let g:indent_guides_guide_size = 1
+
+let g:indent_guides_start_level = 2
+
+"add folding for preprocessor directives
+syn region myFold start="\#if" end="\#endif" transparent fold
+set foldmethod=syntax
+autocmd BufEnter *.c,*.h,*.rb  set foldlevel=99
+autocmd BufEnter *.c,*.h,*.rb  set foldcolumn=7
 
