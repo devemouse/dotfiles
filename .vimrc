@@ -1,9 +1,8 @@
 "-----------------------------------
 "
-" Author: Dariusz Synowiec
-" Last Change: TBD
-" URL: TBD
-" Version: 0.2 
+" Author: Dariusz Synowiec (devemouse)
+" URL: https://github.com/devemouse/dotfiles
+" Version: 0.3
 " Desctiption: Vim configuration file containing initialization for .vimrc
 "
 "------------------------------------
@@ -249,13 +248,15 @@ xmap ]e <Plug>unimpairedMoveDown
 "" yank/paste and clipboard management
 imap <S-Insert>      <C-V>
 vmap <S-Insert>      <C-V>
+
 " Use CTRL-Q to do what CTRL-V used to do
 noremap <C-Q>     <C-V>
 " CTRL-V and SHIFT-Insert are Paste
 map <C-V>      "+gP
 map <S-Insert>    "+gP
-cmap <C-V>     <C-R>+
-cmap <S-Insert>      <C-R>+
+imap <C-V>     <C-R>+
+imap <S-Insert>      <C-R>+
+
 " CTRL-X and SHIFT-Del are Cut
 vnoremap <C-X> "+x
 vnoremap <S-Del> "+x
@@ -440,8 +441,10 @@ let g:indent_guides_start_level = 2
 if has("autocmd")
    " Put these in an autocmd group, so that we can delete them easily.
    augroup vimrcEx
-      au!
+      au!  "clear all commands for current group
+
       autocmd! BufWritePost .vimrc source % " automatically interpret vimrc when saving
+      autocmd BufNewFile,BufRead,BufEnter,BufWritePost .vimrc set foldmethod=marker
 
       autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=grey25 ctermbg=3
       autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=grey15 ctermbg=4
