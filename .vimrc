@@ -63,20 +63,18 @@ endif
 "}}}
 
 "================= default behaviours modification ===========" {{{
-
-"" moving in files
+"=== moving in files ==={{{
 " Stops the cursor reaching the bottom of the screen which is a god send
 " because when you're writing huge functions you end up typing on the bottom
 " line else and you can't see how much space you have.
 set scrolloff=3
-
-"" editing
+"}}}
+"=== editing ==={{{
 set tabstop=3 shiftwidth=3 expandtab
 " backspace and cursor keys wrap to previous/next line
 set backspace=indent,eol,start whichwrap+=<,>,[,]
-
-
-"" file handling
+"}}}
+"=== file handling ==={{{
 set autowrite
 set nobackup
 set noswapfile
@@ -84,8 +82,8 @@ if version >=703
    set undodir=~/vimfiles/undofiles
    set undofile
 endif
-
-"" searching
+"}}}
+"=== searching ==={{{
 set ignorecase
 set smartcase
 set incsearch     " do incremental searching
@@ -95,11 +93,11 @@ set hls " highlight searches
 nnoremap / /\v
 vnoremap / /\v
 set gdefault "use global replacements always
-
-"" buffers
+"}}}
+"=== buffers ==={{{
 set hid             " Can hide buffers without closing them
-
-"" ex commands
+"}}}
+"=== ex commands ==={{{
 set wildmenu "Turn on WiLd menu
 set wildignore=*.bak,*.o,*.e,*~,*.pyc
 set history=50    " keep 50 lines of command line history
@@ -107,14 +105,14 @@ set showcmd    " display incomplete commands
 " Suffixes that get lower priority when doing tab completion for filenames.
 " These are files we are not likely to want to edit or read.
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.class,.pyc
-
-"" folding
+"}}}
+"=== folding ==={{{
 set foldmethod=syntax
 set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo " which commands trigger auto-unfold
-
-"" spelling
+"}}}
+"=== spelling ==={{{
 set spellsuggest=best,10
-
+"}}}
 "}}}
 
 "load plugins
@@ -131,8 +129,7 @@ set path+=c:\Darek\app\wxWidgets\include
 
 "================= mappings ===========" {{{
 let mapleader = ","
-
-"" devemouse mappings
+"=== devemouse mappings ==={{{
 "fast access to .vimrc
 nmap <leader>de :e $MYVIMRC<CR>
 
@@ -151,9 +148,8 @@ nmap <leader>dr :call devefunc#ToggleCursorLines()<CR>
 
 " Tame the quickfix window (open/close using ,dq)
 nmap <silent> <leader>dq :call devefunc#QFixToggle()<CR>
-
-
-"" movement and tabs
+"}}}
+"=== movement and tabs ==={{{
 "move to upper/lower window resizing it to max available space
 map <M-J> <C-W>j<C-W>_
 map <M-K> <C-W>k<C-W>_
@@ -190,8 +186,8 @@ map <left>  :bprevious<CR>
 " swap ` (backtick) and ' (single quote)
 nnoremap ' `
 nnoremap ` '
-
-"" text editing
+"}}}
+"=== text editing ==={{{
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -243,9 +239,8 @@ xmap [e <Plug>unimpairedMoveUp
 xmap ]e <Plug>unimpairedMoveDown
 
 " }}}
-
-
-"" yank/paste and clipboard management
+" }}}
+"=== yank/paste and clipboard management ==={{{
 imap <S-Insert>      <C-V>
 vmap <S-Insert>      <C-V>
 
@@ -262,7 +257,12 @@ vnoremap <C-X> "+x
 vnoremap <S-Del> "+x
 nnoremap Y y$
 
-""searching
+" CTRL-C and CTRL-Insert are Copy
+vnoremap <C-C> "+y
+vnoremap <C-Insert> "+y
+
+"}}}
+"=== searching ==={{{
 "center view after search next/prevoius
 map n nzz
 map N Nzz
@@ -278,9 +278,9 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 " search in visual range
 vnoremap <M-/> <Esc>/\%V
 
-
-
-"" other
+"}}}
+"=== other ==={{{
+noremap <leader>sp :spell spelllang=en,pl<CR>
 
 " Visually select the text that was last edited/pasted
 nnoremap <expr> gV '`[' . strpart(getregtype(), 0, 1) . '`]'
@@ -289,14 +289,6 @@ nnoremap <expr> gV '`[' . strpart(getregtype(), 0, 1) . '`]'
 noremap <C-S>     :update<CR>
 vnoremap <C-S>    <C-C>:update<CR>
 inoremap <C-S>    <C-O>:update<CR>
-
-
-
-" CTRL-C and CTRL-Insert are Copy
-vnoremap <C-C> "+y
-vnoremap <C-Insert> "+y
-
-
 
 " alternate buffer, ',l' is fast to type ;)
 nmap <leader>l :b#<CR>
@@ -324,7 +316,8 @@ nmap <leader>dR :RainbowParenthesesToggle<CR>
 imap ,, <Esc>
 imap ;; <Esc>
 
-"" Function keys
+"}}}
+"=== Function keys ==={{{
 " F1 - help
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
@@ -370,13 +363,11 @@ map <C-F11> :silent !start ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --ex
 " F12 - project and cscope generation
 nmap <silent> <F12> :unmap <F12><CR>:so ~/vimfiles/plugin_on_demand/project.vim<CR>:nmap <silent> <F12> <Plug>ToggleProject<CR><F12>
 map <C-F12> :silent! cscope kill cscope.out<CR>:!cscope -Rbc <CR>:cs add ./cscope.out<CR>
-
-
+"}}}
 "}}}
 
 "================= plugins settings ===========" {{{
-
-"" Tlist
+"=== Tlist ==={{{
 let Tlist_Use_Right_Window = 1
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
@@ -387,7 +378,8 @@ let Tlist_WinWidth = 40
 let Tlist_Display_Prototype=1
 "let Tlist_Process_File_Always=1     " process files in the background, even when the TagList window isn't open
 
-"" NERDTree
+"}}}
+"=== NERDTree ==={{{
 " Store the bookmarks file
 let NERDTreeBookmarksFile=expand("$HOME/vimfiles/NERDTreeBookmarks")
 " Show hidden files, too
@@ -395,25 +387,25 @@ let NERDTreeShowFiles=1
 " Show the bookmarks table on startup
 let NERDTreeShowBookmarks=1
 let NERDTreeChDirMode=2
-
-"" Ack
+"}}}
+"=== Ack ==={{{
 let g:ackprg="perl c:/Darek/bin/ack -H --nocolor --nogroup --column"
-
-"" QuickFilter
+"}}}
+"=== QuickFilter ==={{{
 let g:filteringDefaultContextLines = 0
 let g:filteringDefaultAutoFollow = 1
-
-"" SnipMate
+"}}}
+"=== SnipMate ==={{{
 let g:snips_author = 'Dariusz Synowiec'
-
-"" Project
+"}}}
+"=== Project ==={{{
 "proj flags, imst is default, v will cause using vimgrep instead of grep
 let g:proj_flags="imstv"
-
-"" SRCExplorer
+"}}}
+"=== SRCExplorer ==={{{
 let g:SrcExpl_isUpdateTags = 0
-
-"" TODO: Omnicpp
+"}}}
+"=== TODO: Omnicpp ==={{{
 let OmniCpp_NamespaceSearch = 1
 let OmniCpp_GlobalScopeSearch = 1
 let OmniCpp_ShowAccess = 1
@@ -425,16 +417,16 @@ let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
 " automatically open and close the popup menu / preview window
 "au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 "set completeopt=menuone,menu,longest,preview
-
-"" Shell
+"}}}
+"=== Shell ==={{{
 " enable shell shortcuts in ex - command line
 let g:shell_mappings_enabled = 0
-
-"" IndentGuides
+"}}}
+"=== IndentGuides ==={{{
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
-
+"}}}
 "}}}
 
 "================= auto commands ===========" {{{
@@ -493,6 +485,5 @@ colorscheme darek
 filetype plugin indent on
 
 syntax on "LONG
-set spell spelllang=en,pl "LONG
 
 " vim: set foldmethod=marker
