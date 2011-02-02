@@ -51,13 +51,14 @@ set list
 set ttyfast " smoother changes, alt:nottyfast
 set lz              " Don't re-draw while running macros
 
-set number
 if version >=703
    set cc=+1  " highlight column after 'textwidth'
    "set cc=+1,+5,+3  " highlight three columns after 'textwidth'
    hi ColorColumn ctermbg=darkgrey guibg=#393939 
 
    set relativenumber
+else
+   set number
 endif
 
 "}}}
@@ -449,8 +450,10 @@ if has("autocmd")
       autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=grey25 ctermbg=3
       autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=grey15 ctermbg=4
 
-      autocmd BufEnter *.c,*.h,*.rb  set foldlevel=99
-      autocmd BufEnter *.c,*.h,*.rb  set foldcolumn=7
+      autocmd BufEnter *.c,*.h,*.rb  setlocal foldlevel=99
+      autocmd BufEnter *.c,*.h,*.rb  setlocal foldcolumn=7
+
+      autocmd BufEnter .vimprojects  setlocal relativenumber nolist
 
       " For all text files set 'textwidth' to 100 characters.
       autocmd FileType text setlocal textwidth=100
