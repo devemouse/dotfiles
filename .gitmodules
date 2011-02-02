@@ -27,7 +27,7 @@
 	url = git://github.com/tpope/vim-surround.git
 [submodule "vimfiles/bundle/vim-indent-guides"]
 	path = vimfiles/bundle/vim-indent-guides
-	url = https://github.com/nathanaelkane/vim-indent-guides.git
+	url = git://github.com/nathanaelkane/vim-indent-guides.git
 [submodule "vimfiles/bundle/ack.vim"]
 	path = vimfiles/bundle/ack.vim
 	url = git://github.com/mileszs/ack.vim.git
