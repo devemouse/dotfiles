@@ -441,7 +441,8 @@ let g:indent_guides_start_level = 2
 if has("autocmd")
    " Put these in an autocmd group, so that we can delete them easily.
    augroup vimrcEx
-      au!  "clear all commands for current group
+      "clear all commands for current group
+      au!
 
       autocmd! BufWritePost .vimrc source % " automatically interpret vimrc when saving
       autocmd BufNewFile,BufRead,BufEnter,BufWritePost .vimrc set foldmethod=marker
