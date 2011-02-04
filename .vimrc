@@ -32,6 +32,8 @@ if has("gui_running")
       set guioptions-=a
       set guifont=Consolas:h12
       set enc=utf-8
+   else
+      set lines=45 columns=100
    endif
    " and now alt keys are not used for menu entries ;)
    set winaltkeys=no
