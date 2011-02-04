@@ -121,10 +121,10 @@ filetype off
 call pathogen#runtime_append_all_bundles()
 "call pathogen#helptags() "this is slow...
 
-set tags+=~/vimfiles/tags/wxWidgets
+"set tags+=~/vimfiles/tags/wxWidgets
 "set tags+=~/vimfiles/tags/winapi
 "cscope add ~/vimfiles/tags/wxWidgets.out
-set path+=c:\Darek\app\wxWidgets\include
+"set path+=c:\Darek\app\wxWidgets\include
 
 "set shell=C:\Darek\app\git\bin\bash.exe shellcmdflag=-c shellxquote=\"
 
@@ -300,7 +300,7 @@ nnoremap <Leader>sc :SCCompile<CR>
 nnoremap <Leader>scr :SCCompileRun<CR>
 
 " CodeReviewer
-nmap <leader>ic :unmap <leader>ic<cr>:so ~/vimfiles/plugin_on_demand/CodeReviewer.vim<CR><leader>ic
+"nmap <leader>ic :unmap <leader>ic<cr>:so ~/vimfiles/plugin_on_demand/CodeReviewer.vim<CR><leader>ic
 
 " FullScreen
 inoremap <Leader>df <C-o>:Fullscreen<CR>

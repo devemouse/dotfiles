@@ -34,3 +34,6 @@
 [submodule "vimfiles/bundle/nerdcommenter"]
 	path = vimfiles/bundle/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
+[submodule "vimfiles/bundle/vim-codereview"]
+	path = vimfiles/bundle/vim-codereview
+	url = git://github.com/devemouse/vim-codereview.git
