@@ -19,6 +19,8 @@ if [ -d ${HOME}/.bin ]||[ -h ${HOME}/.bin ]; then
   export PATH=${HOME}/.bin:${PATH}
 fi
 
+export PATH=/var/lib/gems/1.8/bin:$PATH
+
 # If not running interactively, don't do anything
 case "$-" in
 *i*)	;;
@@ -109,3 +111,5 @@ if [ -e "${HOME}/.bin/.work.bash" ] ; then
    echo Applying work settings... 
    . ~/.bin/.work.bash
 fi
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
