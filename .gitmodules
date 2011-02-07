@@ -1,21 +1,21 @@
 [submodule "vimfiles/bundle/fugitive"]
 	path = vimfiles/bundle/fugitive
-	url = http://github.com/tpope/vim-fugitive.git
+	url = git://github.com/tpope/vim-fugitive.git
 [submodule "vimfiles/bundle/NERDTree"]
 	path = vimfiles/bundle/NERDTree
-	url = http://github.com/scrooloose/nerdtree.git
+	url = git://github.com/scrooloose/nerdtree.git
 [submodule "vimfiles/bundle/snipmate"]
 	path = vimfiles/bundle/snipmate
-	url = http://github.com/devemouse/snipmate.vim.git
+	url = git://github.com/devemouse/snipmate.vim.git
 [submodule "vimfiles/bundle/bisect"]
 	path = vimfiles/bundle/bisect
-	url = http://github.com/mikezackles/Bisect.git
+	url = git://github.com/mikezackles/Bisect.git
 [submodule "vimfiles/bundle/tabular"]
 	path = vimfiles/bundle/tabular
-	url = http://github.com/godlygeek/tabular.git
+	url = git://github.com/godlygeek/tabular.git
 [submodule "vimfiles/bundle/vim-ruby"]
 	path = vimfiles/bundle/vim-ruby
-	url = http://github.com/devemouse/vim-ruby.git
+	url = git://github.com/devemouse/vim-ruby.git
 [submodule "vimfiles/bundle/bufexplorer"]
 	path = vimfiles/bundle/bufexplorer
 	url = git://github.com/vim-scripts/bufexplorer.zip.git

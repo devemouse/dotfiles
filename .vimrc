@@ -283,7 +283,7 @@ vnoremap <M-/> <Esc>/\%V
 
 "}}}
 "=== other ==={{{
-noremap <leader>sp :spell spelllang=en,pl<CR>
+noremap <leader>sp :set spell spelllang=en,pl<CR>
 
 " Visually select the text that was last edited/pasted
 nnoremap <expr> gV '`[' . strpart(getregtype(), 0, 1) . '`]'
