@@ -454,6 +454,10 @@ if has("autocmd")
 
       autocmd BufEnter *.c,*.h,*.rb  setlocal foldlevel=99
       autocmd BufEnter *.c,*.h,*.rb  setlocal foldcolumn=7
+      autocmd BufEnter *.c,*.h       imap <buffer> /* /*  */hhi
+      autocmd BufEnter *.c,*.h       imap <buffer> /* /*/kA 
+
+
 
       autocmd BufEnter .vimprojects  setlocal relativenumber nolist
 
@@ -481,6 +485,18 @@ else
 
 endif " has("autocmd")
 "}}}
+
+
+function! LoadCscope()
+   let db = findfile("cscope.out", ".;")
+   if (!empty(db))
+      let path = strpart(db, 0, match(db, "/cscope.out$"))
+      set nocsverb " suppress 'duplicate connection' error
+      exe "silent! cs add " . db . " " . path
+      set csverb   " switch back to verbose mode
+   endif
+endfunction
+au BufEnter /* call LoadCscope()
 
 "source all extra files in vimrc.d (i.e local ones)
 for f in split(glob('~/vimfiles/vimrc.d/*.vim'), '\n')
