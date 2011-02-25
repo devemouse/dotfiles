@@ -37,3 +37,6 @@
 [submodule "vimfiles/bundle/vim-codereview"]
 	path = vimfiles/bundle/vim-codereview
 	url = git://github.com/devemouse/vim-codereview.git
+[submodule "vimfiles/bundle/gundo"]
+	path = vimfiles/bundle/gundo
+	url = git://github.com/sjl/gundo.vim.git

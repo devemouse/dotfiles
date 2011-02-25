@@ -355,6 +355,7 @@ map <F7> :cprev<CR>zz:cc<CR>
 map <F8> :cnext<CR>zz:cc<CR>
 
 " F9 - empty
+nnoremap <F9> :GundoToggle<CR>
 
 " F10 - TODO - source explorer (to fix)
 nmap <silent> <F10> :call InitSrcExpl()<CR>
@@ -424,6 +425,11 @@ let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
 "=== Shell ==={{{
 " enable shell shortcuts in ex - command line
 let g:shell_mappings_enabled = 0
+"}}}
+"=== Gundo ==={{{
+let g:gundo_preview_height = 40
+let g:gundo_preview_bottom = 1
+let g:gundo_help = 0
 "}}}
 "=== IndentGuides ==={{{
 let g:indent_guides_auto_colors = 0
