@@ -145,6 +145,8 @@ nmap <leader>n :cnext<CR>zz:cc<CR>
 nmap <leader>dt :silent !start ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude=.git --exclude=*.s .<CR>
 nmap <leader>dc :!cscope -R -b<CR>:cs add ./cscope.out<CR>
 nmap <leader>dp :unmap <leader>dp<CR>:so ~/vimfiles/plugin_on_demand/project.vim<CR>:nmap <silent> <leader>dp <Plug>ToggleProject<CR><F12>
+"wide lines...
+nmap <leader>dw :call devefunc#wide_lines_toggle()<CR>
 
 "when showing my desktop to other via i.e. NetMeeting cursorlines destroy display
 nmap <leader>dr :call devefunc#ToggleCursorLines()<CR>
