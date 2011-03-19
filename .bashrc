@@ -128,3 +128,4 @@ alias lma='alias | grep -e "alias g[0-9]"|grep -v "alias m"|sed "s/alias //"'
 touch ~/.bookmarks
 source ~/.bookmarks
 
+alias df='df -h -x tmpfs -x devtmpfs -x debugfs'
