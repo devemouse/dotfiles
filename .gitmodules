@@ -43,3 +43,6 @@
 [submodule "vimfiles/bundle/vim-extradite"]
 	path = vimfiles/bundle/vim-extradite
 	url = git://github.com/int3/vim-extradite.git
+[submodule "vimfiles/bundle/vim-easymotion"]
+	path = vimfiles/bundle/vim-easymotion
+	url = https://github.com/Lokaltog/vim-easymotion
