@@ -153,6 +153,19 @@ nmap <leader>dr :call devefunc#ToggleCursorLines()<CR>
 
 " Tame the quickfix window (open/close using ,dq)
 nmap <silent> <leader>dq :call devefunc#QFixToggle()<CR>
+
+""""""""""""""""""""""""""""""""
+"" fixers:
+"Fix trailing spaces
+nmap <silent> <leader>dfs :%s/\([^\ ]*\) \+$/\1/g<CR>
+"Fix Tabs
+nmap <silent> <leader>dft :retab<CR>
+"Fix Comments
+nmap <silent> <leader>dfc :echo "TODO: Add comments fixer to Vim."<CR>
+"Fix Fix (fix all)
+nmap <silent> <leader>dff :retab<CR>:%s/\([^\ ]*\) \+$/\1/g<CR>
+""""""""""""""""""""""""""""""""
+
 "}}}
 "=== movement and tabs ==={{{
 "move to upper/lower window resizing it to max available space
@@ -208,17 +221,6 @@ inoremap <Space> <Space><C-g>u
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
 
-""""""""""""""""""""""""""""""""
-"" fixers:
-"Fix trailing spaces
-nmap <silent> <leader>fs :%s/\([^\ ]*\) \+$/\1/g<CR>
-"Fix Tabs
-nmap <silent> <leader>ft :retab<CR>
-"Fix Comments
-nmap <silent> <leader>fc :echo "TODO: Add comments fixer to Vim."<CR>
-"Fix Fix (fix all)
-nmap <silent> <leader>ff :retab<CR>:%s/\([^\ ]*\) \+$/\1/g<CR>
-""""""""""""""""""""""""""""""""
 
 " Line operations (from http://github.com/tpope/vim-unimpaired/blob/master/plugin/unimpaired.vim) {{{
 " I have this plugin in my repo but for performance reasons I did not include whole plugin in my
@@ -371,27 +373,7 @@ nmap <silent> <F12> :unmap <F12><CR>:so ~/vimfiles/plugin_on_demand/project.vim<
 map <C-F12> :silent! cscope kill cscope.out<CR>:!cscope -Rbc <CR>:cs add ./cscope.out<CR>
 "}}}
 "=== EasyMotion ==={{{
-nnoremap <silent> <Leader>mf      :call EasyMotionF(0, 0)<CR>
-vnoremap <silent> <Leader>mf :<C-U>call EasyMotionF(1, 0)<CR>
-
-nnoremap <silent> <Leader>mF      :call EasyMotionF(0, 1)<CR>
-vnoremap <silent> <Leader>mF :<C-U>call EasyMotionF(1, 1)<CR>
-
-nnoremap <silent> <Leader>mt      :call EasyMotionT(0, 0)<CR>
-vnoremap <silent> <Leader>mt :<C-U>call EasyMotionT(1, 0)<CR>
-
-nnoremap <silent> <Leader>mT      :call EasyMotionT(0, 1)<CR>
-vnoremap <silent> <Leader>mT :<C-U>call EasyMotionT(1, 1)<CR>
-
-nnoremap <silent> <Leader><space> H:call EasyMotionW(0)<CR>
-nnoremap <silent> <Leader>mw      :call EasyMotionW(0)<CR>
-vnoremap <silent> <Leader>mw :<C-U>call EasyMotionW(1)<CR>
-
-nnoremap <silent> <Leader>me      :call EasyMotionE(0)<CR>
-vnoremap <silent> <Leader>me :<C-U>call EasyMotionE(1)<CR>
-
-nnoremap <silent> <Leader>mb      :call EasyMotionB(0)<CR>
-vnoremap <silent> <Leader>mb :<C-U>call EasyMotionB(1)<CR>
+nnoremap <silent> <Leader><space> H:call EasyMotionWB(0, 0)<CR>
 "}}}
 "}}}
 
@@ -431,29 +413,6 @@ let g:snips_author = 'Dariusz Synowiec'
 "proj flags, imst is default, v will cause using vimgrep instead of grep
 let g:proj_flags="imstv"
 "}}}
-"=== EasyMotion ==={{{
-let g:EasyMotion_do_mapping = 0
-nnoremap <silent> <Leader>f      :call EasyMotionF(0, 0)<CR>
-vnoremap <silent> <Leader>f :<C-U>call EasyMotionF(1, 0)<CR>
-
-nnoremap <silent> <Leader>F      :call EasyMotionF(0, 1)<CR>
-vnoremap <silent> <Leader>F :<C-U>call EasyMotionF(1, 1)<CR>
-
-nnoremap <silent> <Leader>t      :call EasyMotionT(0, 0)<CR>
-vnoremap <silent> <Leader>t :<C-U>call EasyMotionT(1, 0)<CR>
-
-nnoremap <silent> <Leader>T      :call EasyMotionT(0, 1)<CR>
-vnoremap <silent> <Leader>T :<C-U>call EasyMotionT(1, 1)<CR>
-
-nnoremap <silent> <Leader>w      :call EasyMotionW(0)<CR>
-vnoremap <silent> <Leader>w :<C-U>call EasyMotionW(1)<CR>
-
-nnoremap <silent> <Leader>e      :call EasyMotionE(0)<CR>
-vnoremap <silent> <Leader>e :<C-U>call EasyMotionE(1)<CR>
-
-nnoremap <silent> <Leader>b      :call EasyMotionB(0)<CR>
-vnoremap <silent> <Leader>b :<C-U>call EasyMotionB(1)<CR>
-"}}}
 "=== SRCExplorer ==={{{
 let g:SrcExpl_isUpdateTags = 0
 "}}}
@@ -490,6 +449,9 @@ let g:SingleCompile_menumode = 0
 "}}}
 "=== NERDCommenter ==={{{
 let NERDMenuMode = 0
+"}}}
+"=== EasyMotion ==={{{
+let g:EasyMotion_keys = 'abcdefghijklmnopqrstuvwxyz'
 "}}}
 "}}}
 
