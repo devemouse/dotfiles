@@ -7,9 +7,6 @@
 [submodule "vimfiles/bundle/snipmate"]
 	path = vimfiles/bundle/snipmate
 	url = git://github.com/devemouse/snipmate.vim.git
-[submodule "vimfiles/bundle/bisect"]
-	path = vimfiles/bundle/bisect
-	url = git://github.com/mikezackles/Bisect.git
 [submodule "vimfiles/bundle/tabular"]
 	path = vimfiles/bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
@@ -45,4 +42,4 @@
 	url = git://github.com/int3/vim-extradite.git
 [submodule "vimfiles/bundle/vim-easymotion"]
 	path = vimfiles/bundle/vim-easymotion
-	url = https://github.com/Lokaltog/vim-easymotion
+	url = git://github.com/Lokaltog/vim-easymotion.git
