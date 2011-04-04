@@ -298,7 +298,7 @@ vnoremap <C-S>    <C-C>:update<CR>
 inoremap <C-S>    <C-O>:update<CR>
 
 " alternate buffer, ',l' is fast to type ;)
-nmap <leader>l :b#<CR>
+"nmap <leader>l :b#<CR>
 
 "some function keys actions remaped to leader
 " SingleCompile
@@ -322,6 +322,7 @@ nmap <leader>dR :RainbowParenthesesToggle<CR>
 " could be better than esc
 imap ,, <Esc>
 imap ;; <Esc>
+imap ,; <Esc>
 
 "}}}
 "=== Function keys ==={{{
@@ -452,6 +453,8 @@ let NERDMenuMode = 0
 "}}}
 "=== EasyMotion ==={{{
 let g:EasyMotion_keys = 'abcdefghijklmnopqrstuvwxyz'
+let g:EasyMotion_grouping = 1
+let g:EasyMotion_leader_key = ',,'
 "}}}
 "}}}
 
