@@ -163,7 +163,8 @@ nmap <silent> <leader>dft :retab<CR>
 "Fix Comments
 nmap <silent> <leader>dfc :echo "TODO: Add comments fixer to Vim."<CR>
 "Fix Fix (fix all)
-nmap <silent> <leader>dff :retab<CR>:%s/\([^\ ]*\) \+$/\1/g<CR>
+"nmap <silent> <leader>dff :retab<CR>:%s/\([^\ ]*\) \+$/\1/g<CR>
+nmap <silent> <leader>dff :'<,'>!uncrustify -c c:\darek\config\.uncrustify.cfg -q -f %<CR>
 """"""""""""""""""""""""""""""""
 
 "}}}
