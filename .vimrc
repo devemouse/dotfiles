@@ -135,6 +135,8 @@ let mapleader = ","
 "=== devemouse mappings ==={{{
 "fast access to .vimrc
 nmap <leader>de :e $MYVIMRC<CR>
+nmap <leader>ds :exe "e " . globpath(&rtp, 'colors/devemouse.vim')<CR>
+
 
 "Shortcut to rapidly toggle 'set list'
 nmap <leader>dl :set list!<CR>
@@ -164,7 +166,7 @@ nmap <silent> <leader>dft :retab<CR>
 nmap <silent> <leader>dfc :echo "TODO: Add comments fixer to Vim."<CR>
 "Fix Fix (fix all)
 "nmap <silent> <leader>dff :retab<CR>:%s/\([^\ ]*\) \+$/\1/g<CR>
-nmap <silent> <leader>dff :'<,'>!uncrustify -c c:\darek\config\.uncrustify.cfg -q -f %<CR>
+nmap <silent> <leader>dff ggVG<Esc>:'<,'>!uncrustify -c c:\darek\config\.uncrustify.cfg -q -f %<CR>
 """"""""""""""""""""""""""""""""
 
 "}}}
@@ -528,7 +530,7 @@ behave mswin
 "syntax highlighting options
 syn region myFold start="\#if" end="\#endif" transparent fold
 syn sync fromstart
-colorscheme darek
+colorscheme devemouse
 
 filetype plugin indent on
 
