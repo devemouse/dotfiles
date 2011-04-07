@@ -531,7 +531,6 @@ behave mswin
 syn region myFold start="\#if" end="\#endif" transparent fold
 syn sync fromstart
 colorscheme devemouse
-set background=dark
 
 filetype plugin indent on
 

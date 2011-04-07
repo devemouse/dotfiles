@@ -20,7 +20,7 @@ syn clear vimVar
 
 for keyword in keywords
 	if keyword =~ '^\k*$'
-		execute 'syn match '.keyword." /ColourAssignment\\['".keyword."'\\]/me=s+16"
+		execute 'syn match '.keyword." /HiSet\\['".keyword."'\\]/me=s+5"
 	endif
 endfor
 
