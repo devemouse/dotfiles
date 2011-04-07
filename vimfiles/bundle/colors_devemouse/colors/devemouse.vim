@@ -30,7 +30,7 @@ let HiSet = {}
 " By default, assume the background colour is dark (changes for light backgrounds are handled later)
 
 " Default text
-let HiSet['Normal']            = {"GUIFG": 'White', "GUIBG":  '#330033'}
+let HiSet['Normal']            = {"GUIFG": 'White', "GUIBG":  '#1B001B'}
 
 let HiSet['Cursor']            = {"GUIFG": 'red',   "GUIBG":  'yellow'}
 
