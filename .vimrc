@@ -166,7 +166,7 @@ nmap <silent> <leader>dft :retab<CR>
 nmap <silent> <leader>dfc :echo "TODO: Add comments fixer to Vim."<CR>
 "Fix Fix (fix all)
 "nmap <silent> <leader>dff :retab<CR>:%s/\([^\ ]*\) \+$/\1/g<CR>
-nmap <silent> <leader>dff ggVG<Esc>:'<,'>!uncrustify -c c:\darek\config\.uncrustify.cfg -q -f %<CR>
+nmap <silent> <leader>dff :update<CR>ggVG<Esc>:'<,'>!uncrustify -c c:\darek\config\.uncrustify.cfg -q -f %<CR>
 """"""""""""""""""""""""""""""""
 
 "}}}
@@ -377,7 +377,7 @@ nmap <silent> <F12> :unmap <F12><CR>:so ~/vimfiles/plugin_on_demand/project.vim<
 map <C-F12> :silent! cscope kill cscope.out<CR>:!cscope -Rbc <CR>:cs add ./cscope.out<CR>
 "}}}
 "=== EasyMotion ==={{{
-nnoremap <silent> <Leader><space> H:call EasyMotionWB(0, 0)<CR>
+"nnoremap <silent> <Leader><space> H:call EasyMotionWB(0, 0)<CR>
 "}}}
 "}}}
 
