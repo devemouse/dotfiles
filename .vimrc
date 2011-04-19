@@ -459,6 +459,11 @@ let g:EasyMotion_keys = 'abcdefghijklmnopqrstuvwxyz'
 let g:EasyMotion_grouping = 1
 "let g:EasyMotion_leader_key = ',,'
 "}}}
+"=== ClangComplete ==={{{
+"let g:clang_exec = 'c:/Darek/app/git/bin/clang.exe'
+"let g:clang_library_path = 'c:/Darek/app/git/lib'
+"let g:clang_use_library = 1
+"}}}
 "}}}
 
 "================= auto commands ===========" {{{
