@@ -517,9 +517,9 @@ endif " has("autocmd")
 function! LoadCscope()
    let db = findfile("cscope.out", ".;")
    if (!empty(db))
-      let path = strpart(db, 0, match(db, "/cscope.out$"))
+      let cs_path = strpart(db, 0, match(db, "/cscope.out$"))
       set nocsverb " suppress 'duplicate connection' error
-      exe "silent! cs add " . db . " " . path
+      exe "silent! cs add " . db . " " . cs_path
       set csverb   " switch back to verbose mode
    endif
 endfunction
