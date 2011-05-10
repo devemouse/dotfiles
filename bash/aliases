@@ -60,9 +60,24 @@ function t
    [ $? -ne 0 ] && task
 }
 
+function ta
+{
+   task add $@;
+   task export.ical > ~/cal.ical;
+}
+
+function td 
+{ 
+   task $@ done; 
+   task export.ical > ~/cal.ical;
+}
+
+function tx 
+{ 
+   task $@ delete; 
+   task export.ical > ~/cal.ical;
+}
+
 alias tc="task cal"
-alias ta="task add "
-function td { task $@ done; }
-function tx { task $@ delete; }
 
 
