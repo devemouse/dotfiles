@@ -49,9 +49,20 @@ alias q="exit"
 alias :q="exit" # I often use vi like exit by accident, so make it work ;)
 alias G="|grep -n --color=auto"
 
+alias cdi="cd ~/IN"
+
 # Shows most used commands, cool script I got this from: http://lifehacker.com/software/how-to/turbocharge-your-terminal-274317.php
 alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"
 
+function t
+{
+   task list tag:work $@;
+   [ $? -ne 0 ] && task
+}
 
+alias tc="task cal"
+alias ta="task add "
+function td { task $@ done; }
+function tx { task $@ delete; }
 
 

@@ -336,7 +336,7 @@ vnoremap <F1> <ESC>
 map <C-F1> :help<CR>
 
 " F2 - NERD Tree
-nmap <F2> :NERDTreeToggle<CR>
+nmap <F2> :NERDTreeToggle PictusPorting<CR>
 nmap <C-F2> :NERDTreeClose<CR>
 
 " F3
@@ -402,6 +402,7 @@ let NERDTreeShowFiles=1
 " Show the bookmarks table on startup
 let NERDTreeShowBookmarks=1
 let NERDTreeChDirMode=2
+let NERDTreeIgnore=['\.hex$', '\.s19$', '\.dbo$', '\.d$', '\~$']
 "}}}
 "=== Ack ==={{{
 let g:ackprg="perl c:/Darek/bin/ack -H --nocolor --nogroup --column"

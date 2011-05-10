@@ -1,0 +1,136 @@
+# [Created by task 1.9.4 5/9/2011 12:53:51]
+# Taskwarrior program configuration file.
+# For more documentation, see http://taskwarrior.org or try 'man task', 'man task-faq',
+# 'man task-tutorial', 'man task-color', 'man task-sync' or 'man taskrc'
+
+# Here is an example of entries that use the default, override and blank values
+#   variable=foo   -- By specifying a value, this overrides the default
+#   variable=      -- By specifying no value, this means no default
+#   #variable=foo  -- By commenting out the line, or deleting it, this uses the default
+
+# Use the command 'task show' to see all defaults and overrides
+
+# Files
+data.location=~/../My Dropbox/tasks
+
+calendar.details=full
+# Color theme (uncomment one to use)
+#include /share/doc/task/rc/light-16.theme
+#include /share/doc/task/rc/light-256.theme
+#include /share/doc/task/rc/dark-16.theme
+#include /share/doc/task/rc/dark-256.theme
+#include /share/doc/task/rc/dark-red-256.theme
+#include /share/doc/task/rc/dark-green-256.theme
+#include /share/doc/task/rc/dark-blue-256.theme
+#include /share/doc/task/rc/dark-violets-256.theme
+#include /share/doc/task/rc/dark-yellow-green.theme
+
+color=on
+color.header=blue
+color.footnote=blue
+color.debug=blue
+
+color.summary.bar=black on green
+color.summary.background=white on black
+
+color.history.add=black on red
+color.history.done=black on green
+color.history.delete=black on yellow
+
+color.burndown.pending=on red
+color.burndown.started=on yellow
+color.burndown.done=on green
+
+color.sync.added=green
+color.sync.changed=yellow
+color.sync.rejected=red
+
+color.undo.before=red
+color.undo.after=green
+
+color.calendar.today=black on blue
+color.calendar.due=white on red
+color.calendar.due.today=bold white on red
+color.calendar.overdue=black on red
+color.calendar.weekend=black on white
+color.calendar.holiday=black on yellow
+color.calendar.weeknumber=bold blue
+
+color.recurring=blue
+color.overdue=bold red
+color.due.today=red
+color.due=red
+color.active=black on green
+color.pri.none=
+color.pri.H=bold black
+color.pri.M=black
+color.pri.L=
+color.tagged=green
+color.blocked=white on black
+color.project.none=
+color.tag.none=
+color.alternate=
+
+calendar.holidays=sparse
+weekstart=Monday
+
+dateformat=Y-M-D
+dateformat.annotation=Y-M-D
+dateformat.holiday=Y-M-D
+dateformat.report=Y-M-D
+
+# 2011
+holiday.nowyrok.name=Nowy Rok
+holiday.nowyrok.date=2011-01-01
+holiday.trzechkroli.name=Trzech Króli
+holiday.trzechkroli.date=2011-01-06
+holiday.wielkanoc.name=Wielkanoc
+holiday.wielkanoc.date=2011-04-24
+holiday.wielkiponiedzialek.name=Wielki Poniedzialek (Dyngus)
+holiday.wielkiponiedzialek.date=2011-04-25
+holiday.swietopracy.name=Święto Pracy
+holiday.swietopracy.date=2011-05-01
+holiday.konstytucji3maja.name=Święto Konstytucji 3 maja
+holiday.konstytucji3maja.date=2011-05-03
+holiday.zieloneswiatki.name=Zesłanie Ducha Świętego (Zielone Świątki)
+holiday.zieloneswiatki.date=2011-06-12
+holiday.bozecialo.name=Boże Ciało
+holiday.bozecialo.date=2011-06-23
+holiday.wniebowziecia.name=Święto Wojska Polskiego, Wniebowzięcie Najświętszej Maryi Panny
+holiday.wniebowziecia.date=2011-08-15
+holiday.wszystkichswietych.name=Wszystkich Świętych
+holiday.wszystkichswietych.date=2011-11-01
+holiday.niepodleglosci.name=Święto Niepodległości
+holiday.niepodleglosci.date=2011-11-11
+holiday.bozenarodzenie.name=Boże Narodzenie
+holiday.bozenarodzenie.date=2011-12-25
+holiday.bozenarodzenie2.name=Boże Narodzenie drugi dzien
+holiday.bozenarodzenie2.date=2011-12-26
+
+#urlop
+holiday.urlop01.date=2011-06-24
+holiday.urlop02.date=2011-07-04
+holiday.urlop03.date=2011-07-05
+holiday.urlop04.date=2011-07-06
+holiday.urlop05.date=2011-07-07
+holiday.urlop06.date=2011-07-08
+holiday.urlop07.date=2011-07-09
+holiday.urlop08.date=2011-07-10
+holiday.urlop09.date=2011-07-11
+holiday.urlop10.date=2011-07-12
+holiday.urlop11.date=2011-07-13
+holiday.urlop12.date=2011-07-14
+holiday.urlop13.date=2011-07-15
+holiday.urlop14.date=2011-07-16
+holiday.urlop15.date=2011-07-17
+holiday.urlop16.date=2011-07-18
+holiday.urlop17.date=2011-07-19
+holiday.urlop18.date=2011-07-20
+holiday.urlop19.date=2011-07-21
+holiday.urlop20.date=2011-07-22
+holiday.urlop21.date=2011-10-31
+holiday.urlop22.date=2011-12-27
+holiday.urlop23.date=2011-12-28
+holiday.urlop24.date=2011-12-29
+holiday.urlop25.date=2011-12-30
+

@@ -4,9 +4,12 @@ if exists("current_compiler")
 endif
 let current_compiler = "fiat_pp"
 
-if exists(":CompilerSet") != 2		" older Vim always used :setlocal
-  command -nargs=* CompilerSet setlocal <args>
-endif
+let s:cpo_save = &cpo
+set cpo-=C
+
+"if exists(":CompilerSet") != 2		" older Vim always used :setlocal
+  "command -nargs=* CompilerSet setlocal <args>
+"endif
 
 function! AsyncBuild(target)
     let command = "cc.bat ". a:target
@@ -42,11 +45,11 @@ endif
 
 
 CompilerSet errorformat=
-         \\|\|\ %m,
-         \%E%*[\"]%f%*[\"]\\,\ line\ %l:\ fatal\ error\ #%n%.%#,%Z\ \ %p^,%C%m,
-         \%E%*[\"]%f%*[\"]\\,\ line\ %l:\ error\ #%n:%m%.%#,%Z\ \ %p^,%C%m,
-         \%W%*[\"]%f%*[\"]\\,\ line\ %l:\ warning\ #%n-D:%m%.%#,%Z\ \ %p^,%C%m,
-         \%I%*[\"]%f%*[\"]\\,\ line\ %l:\ remark\ #%n-D:%m%.%#,%Z\ \ %p^,%C%m
+         \%E\"%f\"\\,\ line\ %l:\ fatal\ error\ #%n%.%#,%Z\ \ %p^,%C%m,
+         \%E\"%f\"\\,\ line\ %l:\ error\ #%n:%m%.%#,%Z\ \ %p^,%C%m,
+         \%W\"%f\"\\,\ line\ %l:\ warning\ #%n-D:%m%.%#,%Z\ \ %p^,%C%m,
+         \%I\"%f\"\\,\ line\ %l:\ remark\ #%n-D:%m%.%#,%Z\ \ %p^,%C%m
+         "\\|\|\ %m,
    "uncomment this to get compiler remarks
    "uncomment this to get compiler warnings
 
@@ -135,4 +138,6 @@ CompilerSet errorformat=
 
 
    let g:CodeReviewer_reviewFile="reviews/" . strftime("%Y-%m-%d") . "_review_notes.rev"   " Set review file name
+let &cpo = s:cpo_save
+unlet s:cpo_save
 
