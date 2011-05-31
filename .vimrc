@@ -130,6 +130,7 @@ call pathogen#runtime_append_all_bundles()
 
 "set shell=C:\Darek\app\git\bin\bash.exe shellcmdflag=-c shellxquote=\"
 
+let g:changelog_username = 'Dariusz Synowiec'
 "================= mappings ===========" {{{
 let mapleader = ","
 "=== devemouse mappings ==={{{

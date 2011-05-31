@@ -35,7 +35,7 @@ endfunction
 if has("gui_running")
    let $PATH="c:\\Darek\\app\\vim\\vim73;c:\\Darek\\app\\git\\bin;" .$PATH
    CompilerSet makeprg=cc
-   nmap <F4> :bufdo update<CR>:call AsyncBuild('RELEASE')<CR>
+   nmap <F4> :cclose<CR>:bufdo update<CR>:call AsyncBuild('RELEASE')<CR>
 else
    let $PATH = "./sw_tools;" . $PATH
    set shellpipe=2>&1\|tee\ build.log
