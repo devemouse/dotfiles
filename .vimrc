@@ -41,7 +41,7 @@ if has("gui_running")
 endif
 
 "and finally I will know which function am I in ;)
-set statusline=%<%f%h%m%r\ /%{&ff}/\ %y%=%b\ 0x%B\ \ %l,%c%V\ %P\ %{fugitive#statusline()}\ %=%([%{Tlist_Get_Tagname_By_Line()}]%)
+set statusline=%<%f%h%m%r\ /%{&ff}/\ %y%=%b\ 0x%B\ \ %l,%c%V\ %P\ %{fugitive#statusline()}\ %=
 
 "show status line
 set laststatus=2
@@ -370,7 +370,6 @@ nnoremap <F9> :GundoToggle<CR>
 nmap <silent> <F10> :call InitSrcExpl()<CR>
 
 " F11 - Tags (list and generate)
-"nmap <silent> <F11> :TlistToggle<CR>
 nmap <silent> <F11> :TagbarToggle<CR>
 map <C-F11> :silent !start ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude=.git --exclude=*.s .<CR>
 
@@ -384,17 +383,14 @@ map <C-F12> :silent! cscope kill cscope.out<CR>:!cscope -Rbc <CR>:cs add ./cscop
 "}}}
 
 "================= plugins settings ===========" {{{
-"=== Tlist ==={{{
-let Tlist_Use_Right_Window = 1
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_GainFocus_On_ToggleOpen = 1
-let Tlist_Show_One_File = 1
-let Tlist_Use_SingleClick = 1
-let Tlist_WinWidth = 40
-" show function/method prototypes in the list
-let Tlist_Display_Prototype=1
-"let Tlist_Process_File_Always=1     " process files in the background, even when the TagList window isn't open
-
+"=== Tagbar ==={{{
+let g:tagbar_width = 40
+let g:tagbar_autoclose = 0
+let g:tagbar_autofocus = 1
+let g:tagbar_sort = 1
+let g:tagbar_compact = 0
+let g:tagbar_foldlevel = 2
+let g:tagbar_autoshowtag = 1
 "}}}
 "=== NERDTree ==={{{
 " Store the bookmarks file

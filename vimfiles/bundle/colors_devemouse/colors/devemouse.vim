@@ -36,6 +36,7 @@ let HiSet['Cursor']            = {"GUIFG": 'red',   "GUIBG":  'yellow'}
 
 " Comments
 let HiSet['Comment']           = {"GUIFG": '#6eca6e',     "CTERMFG": 'darkcyan',     "TERM":   'Bold'}
+let HiSet['TagbarComment']     = {"GUIFG": '#6eca6e',     "CTERMFG": 'darkcyan',     "TERM":   'Bold'}
 
 " These are considered to be a different sort of comment, so they get a different shade
 " of green: this also allows the doxygen todo error highlighter to be able to spot
@@ -72,6 +73,7 @@ let HiSet['Operator']          = {"GUIFG": '#CCCCFF'}
 let HiSet['Identifier']        = {"GUIFG": 'cyan',   "CTERMFG": '6'}
 let HiSet['Function']          = {"GUIFG": '#007777',     "CTERMFG": 'Cyan'}
 let HiSet['Method']            = {"GUIFG": '#009966',     "CTERMFG": 'Cyan'}
+let HiSet['TagbarKind']        = {"GUIFG": 'cyan',   "CTERMFG": '6'}
 
 " Special additions created by mktypes.py are shades of Purple or Grey
 let HiSet['Class']             = {"GUIFG": 'Purple',      "TERM":  'Underline'}
@@ -83,11 +85,13 @@ let HiSet['Union']             = {"GUIFG": 'Grey',        "TERM":    'Underline'
 let HiSet['GlobalVariable']    = {"GUIFG": '#666600',     "CTERMFG": 'Cyan',      "TERM":  'Underline'}
 let HiSet['LocalVariable']     = {"GUIFG": '#aaa14c',     "CTERMFG": 'Cyan'}
 let HiSet['GlobalConstant']    = {"GUIFG": '#bbbb00',     "CTERMFG": 'Yellow',      "TERM":  'Underline'}
+let HiSet['TAgbarScope']       = {"GUIFG": 'Purple',      "TERM":  'Underline'}
 
 " Types/storage classes etc are shades of orangey-red
 let HiSet['Type']              = {"GUIFG": '#ff8000',     "CTERMFG":    '2'}
 let HiSet['StorageClass']      = {"GUIFG": '#ff4040'} " static, register, volatile, etc.
 let HiSet['Structure']         = {"GUIFG": '#ff8080'} " struct, union, enum, etc.
+let HiSet['TagbarType']        = {"GUIFG": '#ff8000',     "CTERMFG":    '2'}
 
 " Special Stuff
 let HiSet['Special']           = {"GUIFG": 'red',         "CTERMFG":    '5'}
