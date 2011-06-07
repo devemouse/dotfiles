@@ -43,3 +43,6 @@
 [submodule "vimfiles/bundle/vim-easymotion"]
 	path = vimfiles/bundle/vim-easymotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
+[submodule "vimfiles/bundle/tagbar"]
+	path = vimfiles/bundle/tagbar
+	url = git://github.com/majutsushi/tagbar

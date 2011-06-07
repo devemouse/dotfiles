@@ -370,7 +370,8 @@ nnoremap <F9> :GundoToggle<CR>
 nmap <silent> <F10> :call InitSrcExpl()<CR>
 
 " F11 - Tags (list and generate)
-nmap <silent> <F11> :TlistToggle<CR>
+"nmap <silent> <F11> :TlistToggle<CR>
+nmap <silent> <F11> :TagbarToggle<CR>
 map <C-F11> :silent !start ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude=.git --exclude=*.s .<CR>
 
 " F12 - project and cscope generation
