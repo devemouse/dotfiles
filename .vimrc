@@ -116,6 +116,15 @@ set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo " which
 "=== spelling ==={{{
 set spellsuggest=best,10
 "}}}
+"=== tags and cscope ==={{{
+" 'cscopequickfix' specifies whether to use quickfix window to show cscope
+" results
+set cscopequickfix=s-,c-,d-,i-,t-,e-
+"set tags+=~/vimfiles/tags/wxWidgets
+"set tags+=~/vimfiles/tags/winapi
+"cscope add ~/vimfiles/tags/wxWidgets.out
+"set path+=c:\Darek\app\wxWidgets\include
+"}}}
 "}}}
 
 "load plugins
@@ -123,14 +132,10 @@ filetype off
 call pathogen#runtime_append_all_bundles()
 "call pathogen#helptags() "this is slow...
 
-"set tags+=~/vimfiles/tags/wxWidgets
-"set tags+=~/vimfiles/tags/winapi
-"cscope add ~/vimfiles/tags/wxWidgets.out
-"set path+=c:\Darek\app\wxWidgets\include
-
 "set shell=C:\Darek\app\git\bin\bash.exe shellcmdflag=-c shellxquote=\"
 
 let g:changelog_username = 'Dariusz Synowiec'
+
 "================= mappings ===========" {{{
 let mapleader = ","
 "=== devemouse mappings ==={{{
@@ -146,7 +151,7 @@ nmap <leader>dcl :clist<CR>
 nmap <leader>p :cprev<CR>zz:cc<CR>
 nmap <leader>n :cnext<CR>zz:cc<CR>
 nmap <leader>dt :silent !start ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude=.git --exclude=*.s .<CR>
-nmap <leader>dc :!cscope -R -b<CR>:cs add ./cscope.out<CR>
+nmap <leader>dc :!cscope -Rb<CR>:cs add ./cscope.out<CR>
 nmap <leader>dp :unmap <leader>dp<CR>:so ~/vimfiles/plugin_on_demand/project.vim<CR>:nmap <silent> <leader>dp <Plug>ToggleProject<CR><F12>
 "wide lines...
 nmap <leader>dw :call devefunc#wide_lines_toggle()<CR>
@@ -356,12 +361,15 @@ map <S-F5> :Ack --cc <CR>
 
 " F6 - show quick error list
 map <F6> :clist<CR>
+map <S-F6> :llist<CR>
 
 " F7 - previous error
 map <F7> :cprev<CR>zz:cc<CR>
+map <S-F7> :lprev<CR>zz:ll<CR>
 
 " F8 - next error
 map <F8> :cnext<CR>zz:cc<CR>
+map <S-F8> :lnext<CR>zz:ll<CR>
 
 " F9 - empty
 nnoremap <F9> :GundoToggle<CR>
