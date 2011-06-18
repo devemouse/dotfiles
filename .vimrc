@@ -388,6 +388,9 @@ map <C-F12> :silent! cscope kill cscope.out<CR>:!cscope -Rbc <CR>:cs add ./cscop
 "=== EasyMotion ==={{{
 "nnoremap <silent> <Leader><space> H:call EasyMotionWB(0, 0)<CR>
 "}}}
+"=== Arpeggio maps ==={{{
+call arpeggio#map('i', '', 0, 'jk', '<Esc>')
+"}}}
 "}}}
 
 "================= plugins settings ===========" {{{
