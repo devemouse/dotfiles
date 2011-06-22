@@ -414,7 +414,11 @@ let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\.hex$', '\.s19$', '\.dbo$', '\.d$', '\~$']
 "}}}
 "=== Ack ==={{{
+if !has("unix")
 let g:ackprg="perl c:/Darek/bin/ack -H --nocolor --nogroup --column"
+else
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+endif
 "}}}
 "=== QuickFilter ==={{{
 let g:filteringDefaultContextLines = 0

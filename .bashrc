@@ -129,3 +129,6 @@ touch ~/.bookmarks
 source ~/.bookmarks
 
 alias df='df -h -x tmpfs -x devtmpfs -x debugfs'
+
+#export MAKEFLAGS=j4
+

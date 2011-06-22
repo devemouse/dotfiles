@@ -81,3 +81,4 @@ function tx
 alias tc="task cal"
 
 
+alias bm=bashmount
