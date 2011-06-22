@@ -46,3 +46,6 @@
 [submodule "vimfiles/bundle/tagbar"]
 	path = vimfiles/bundle/tagbar
 	url = git://github.com/majutsushi/tagbar
+[submodule "vimfiles/bundle/vim-arpeggio"]
+	path = vimfiles/bundle/vim-arpeggio
+	url = git://github.com/kana/vim-arpeggio.git
