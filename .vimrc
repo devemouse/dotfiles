@@ -342,7 +342,7 @@ vnoremap <F1> <ESC>
 map <C-F1> :help<CR>
 
 " F2 - NERD Tree
-nmap <F2> :NERDTreeToggle PictusPorting<CR>
+nmap <F2> :NERDTreeToggle WORK<CR>
 nmap <C-F2> :NERDTreeClose<CR>
 
 " F3
