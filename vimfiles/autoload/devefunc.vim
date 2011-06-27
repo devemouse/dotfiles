@@ -25,6 +25,15 @@ fun! devefunc#wide_lines_toggle()
    endif
 endfunction
 
+function! devefunc#LoadCscope()
+   let db = findfile("cscope.out", ".;")
+   if (!empty(db))
+      let cs_path = strpart(db, 0, match(db, "/cscope.out$"))
+      set nocsverb " suppress 'duplicate connection' error
+      exe "silent! cs add " . db . " " . cs_path
+      set csverb   " switch back to verbose mode
+   endif
+endfunction
 
 """""""""""""""""""""""""""""""""""""""" FUNCTIONS: """"""""""""""""""""""""""""""""""""""""{{{
 " Convenient command to see the difference between the current buffer and the

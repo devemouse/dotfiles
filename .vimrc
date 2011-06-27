@@ -127,15 +127,14 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-
 "set path+=c:\Darek\app\wxWidgets\include
 "}}}
 "}}}
+"set shell=C:\Darek\app\git\bin\bash.exe shellcmdflag=-c shellxquote=\"
 
+"================= load plugins ===========" {{{
 "load plugins
 filetype off
 call pathogen#runtime_append_all_bundles()
 "call pathogen#helptags() "this is slow...
-
-"set shell=C:\Darek\app\git\bin\bash.exe shellcmdflag=-c shellxquote=\"
-
-let g:changelog_username = 'Dariusz Synowiec'
+"}}}
 
 "================= mappings ===========" {{{
 let mapleader = ","
@@ -479,6 +478,9 @@ let g:EasyMotion_grouping = 1
 "let g:clang_library_path = 'c:/Darek/app/git/lib'
 "let g:clang_use_library = 1
 "}}}
+"=== ChangeLog ==={{{
+let g:changelog_username = 'Dariusz Synowiec'
+"}}}
 "}}}
 
 "================= auto commands ===========" {{{
@@ -517,6 +519,7 @@ if has("autocmd")
                \   exe "normal! g`\"" |
                \ endif
 
+      autocmd BufEnter * call devefunc#LoadCscope()
    augroup END
 
    "au BufNewFile,BufRead * call SetLocalOptions(bufname("%"))
@@ -528,24 +531,16 @@ else
 endif " has("autocmd")
 "}}}
 
-
-function! LoadCscope()
-   let db = findfile("cscope.out", ".;")
-   if (!empty(db))
-      let cs_path = strpart(db, 0, match(db, "/cscope.out$"))
-      set nocsverb " suppress 'duplicate connection' error
-      exe "silent! cs add " . db . " " . cs_path
-      set csverb   " switch back to verbose mode
-   endif
-endfunction
-au BufEnter /* call LoadCscope()
-
+"================= source vimrc.d/*.vim ===========" {{{
 "source all extra files in vimrc.d (i.e local ones)
 for f in split(glob('~/vimfiles/vimrc.d/*.vim'), '\n')
     exe 'source' f
 endfor
+"}}}
 
 behave mswin
+
+"================= syntax===========" {{{
 
 "syntax highlighting options
 syn region myFold start="\#if" end="\#endif" transparent fold
@@ -555,5 +550,7 @@ colorscheme devemouse
 filetype plugin indent on
 
 syntax on "LONG
+
+"}}}
 
 " vim: set foldmethod=marker
