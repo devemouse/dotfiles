@@ -29,6 +29,7 @@ if has("gui_running")
    endif
 
    if has("gui_win32") || has("gui_win32s")
+      au GUIEnter * simalt ~x
       set guioptions-=a
       set guifont=Consolas:h12
       set enc=utf-8
