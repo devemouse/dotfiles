@@ -524,6 +524,8 @@ if has("autocmd")
 
    "au BufNewFile,BufRead * call SetLocalOptions(bufname("%"))
 
+   au BufNewFile,BufRead *.mot setf srec
+
 else
 
   set autoindent     " always set autoindenting on
