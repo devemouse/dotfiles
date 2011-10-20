@@ -103,10 +103,6 @@ if [ "$(__git_ps1)" == "" ] ; then
    fi
 fi
 
-PS1=' \[\033[01;41;37m\]${?#0}\[\033[00m\] \[\033]0;$MSYSTEM:\w\007
-\033[32m\]\u@\h \[\033[33m\w$(__git_ps1)\033[0m\]  
-$ '
-
 if [ -e "${HOME}/.bin/.work.bash" ] ; then 
    echo Applying work settings... 
    . ~/.bin/.work.bash
@@ -130,5 +126,15 @@ source ~/.bookmarks
 
 alias df='df -h -x tmpfs -x devtmpfs -x debugfs'
 
+#PS1=' \[\033[01;41;37m\]${?#0}\[\033[00m\] \[\033]0;$MSYSTEM:\w\007
+#\033[32m\]\u@\h \[\033[33m\w$(__git_ps1)\033[0m\]  
+#$ '
+
 #export MAKEFLAGS=j4
+export EDITOR=vim
+
+
+if [ -f ~/bash/bash_ps1 ]; then
+	. ~/bash/bash_ps1
+fi
 
