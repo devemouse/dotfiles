@@ -150,7 +150,7 @@ nmap <leader>dl :set list!<CR>
 nmap <leader>dcl :clist<CR>
 nmap <leader>p :cprev<CR>zz:cc<CR>
 nmap <leader>n :cnext<CR>zz:cc<CR>
-nmap <leader>dt :silent !start ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude=.git --exclude=*.s .<CR>
+nmap <leader>dt :silent !start ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude=boot/* --exclude=.git --exclude=*.s .<CR>
 nmap <leader>dc :!cscope -Rb<CR>:cs add ./cscope.out<CR>
 nmap <leader>dp :unmap <leader>dp<CR>:so ~/vimfiles/plugin_on_demand/project.vim<CR>:nmap <silent> <leader>dp <Plug>ToggleProject<CR><F12>
 "wide lines...
