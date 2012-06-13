@@ -24,7 +24,7 @@
    ignoreCygwinFSTricks  = true
    autocrlf = input
    safecrlf = false
-   pager = "less"
+   pager = "less -r"
    editor = vim
    excludesfile = ~/.gitignore_global
 [alias]
@@ -34,6 +34,7 @@
    st   = "status"
    br   = "branch"
    di   = "diff --no-ext-diff"
+   diw  = "diff --no-ext-diff --color-words"
    die  = "diff"
    pending = !git --no-pager log origin/master..master && echo
    lol = log --pretty=oneline --abbrev-commit --graph --decorate
