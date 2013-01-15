@@ -32,6 +32,7 @@
    cima = "commit -a -m"
    co   = "checkout"
    st   = "status"
+   au   = "add -u"
    br   = "branch"
    di   = "diff --no-ext-diff"
    diw  = "diff --no-ext-diff --color-words"
@@ -49,3 +50,7 @@
    
 [github]
 	user = devemouse
+[push]
+	default = upstream
+[http]
+	proxy = %HTTP_PROXY%

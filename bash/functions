@@ -26,4 +26,9 @@ wiki() {
    dig +short txt $1.wp.dg.cx
 }
 
+prompt_char() {
+   git branch >/dev/null 2>/dev/null && echo '±' && return
+   echo '$'
+}
+
 source ~/bash/bashmarks.sh
