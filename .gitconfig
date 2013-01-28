@@ -1,56 +1,66 @@
 [user]
-   name = Dariusz Synowiec
-   email = devemouse@gmail.com
+	name = Dariusz Synowiec
+	email = dariusz.synowiec@wdc.com
 [color]
-   #status = always
-   #branch = always
-   #diff = always
-   #interactive = always
-   ui = auto
+	#status = always
+	#branch = always
+	#diff = always
+	#interactive = always
+	ui = auto
 [color "branch"]
-   current = yellow reverse
-   local = yellow
-   remote = green
+	current = yellow reverse
+	local = yellow
+	remote = green
 [color "diff"]
-   meta = yellow bold
-   frag = magenta bold
-   old = red bold
-   new = green bold
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
 [color "status"]
-   added = yellow
-   changed = green
-   untracked = cyan
+	added = yellow
+	changed = green
+	untracked = cyan
 [core]
-   ignoreCygwinFSTricks  = true
-   autocrlf = input
-   safecrlf = false
-   pager = "less -r"
-   editor = vim
-   excludesfile = ~/.gitignore_global
+	ignoreCygwinFSTricks = true
+	autocrlf = input
+	safecrlf = false
+	pager = \"less -r\"
+	editor = notepad++
+	excludesfile = ~/.gitignore_global
 [alias]
-   cim  = "commit -m"
-   cima = "commit -a -m"
-   co   = "checkout"
-   st   = "status"
-   au   = "add -u"
-   br   = "branch"
-   di   = "diff --no-ext-diff"
-   diw  = "diff --no-ext-diff --color-words"
-   die  = "diff"
-   pending = !git --no-pager log origin/master..master && echo
-   lol = log --pretty=oneline --abbrev-commit --graph --decorate
-   conflicts = !git ls-files --unmerged | cut -c51- | sort -u | xargs $EDITOR
-   resolve = !git ls-files --unmergedmerged | cut -c51- | sort -u | xargs git add
-   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-   supdate = "submodule foreach 'git pull origin master'"
+	cim = \"commit -m\"
+	cima = \"commit -a -m\"
+	co = \"checkout\"
+	st = \"status\"
+	au = \"add -u\"
+	br = \"branch\"
+	di = \"diff --no-ext-diff\"
+	diw = \"diff --no-ext-diff --color-words\"
+	die = \"diff\"
+	pending = !git --no-pager log origin/master..master && echo
+	lol = log --pretty=oneline --abbrev-commit --graph --decorate
+	conflicts = !git ls-files --unmerged | cut -c51- | sort -u | xargs $EDITOR
+	resolve = !git ls-files --unmergedmerged | cut -c51- | sort -u | xargs git add
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	supdate = \"submodule foreach 'git pull origin master'\"
 [branch]
-   autosetupmerge = true
+	autosetupmerge = true
 [diff]
-    external = git_diff_wrapper.sh
-   
+	external = git_diff_wrapper.sh
+	guitool = beyondcompare3
 [github]
 	user = devemouse
 [push]
 	default = upstream
 [http]
 	proxy = %HTTP_PROXY%
+[difftool "beyondcompare3"]
+	path = C:/Program Files/Beyond Compare 3/bcomp.exe
+	cmd = \"C:/Program Files/Beyond Compare 3/bcomp.exe\" \"$LOCAL\" \"$REMOTE\"
+[merge]
+	tool = BeyondCompare3
+[mergetool "BeyondCompare3"]
+	path = C:/Program Files/Beyond Compare 3/bcomp.exe
+	cmd = \"C:/Program Files/Beyond Compare 3/bcomp.exe\" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+[i18n]
+	filesEncoding = utf-8
